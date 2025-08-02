@@ -1,0 +1,78 @@
+﻿using Newtonsoft.Json;
+using PrImage.JsonBlueprints;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PrImage
+{
+    public partial class FormMain : Form
+    {
+        private void OnListViewSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewSelect.SelectedItems.Count > 0)
+            {
+                buttonSelectRead.Enabled = true;
+                ListViewItem selectedItem = listViewSelect.SelectedItems[0];
+                LibraryContent content = selectedItem.Tag as LibraryContent;
+
+                if (content != null)
+                {
+                    labelSelectInfoName.Text = $"Title: {content.Name}";
+                    labelSelectInfoDate.Text = $"Created: {content.DateCreated}({content.DateModified})";
+                    labelSelectInfoTags.Text = $"Tags: {string.Join(", ", content.Tags)}";
+
+
+                    using (var ms = new System.IO.MemoryStream(content.Data))
+                    {
+                        pictureBoxSelectPreview.Image = System.Drawing.Image.FromStream(ms);
+                    }
+                }
+            }
+            else
+            {
+                buttonSelectRead.Enabled = false;
+            }
+        }
+        private void buttonSelectRead_Click(object sender, EventArgs e)
+        {
+            buttonSelectRead.Text = "Loading...";
+            buttonSelectRead.Enabled = false;
+            int id = LibraryContentsDictionary[listViewSelect.SelectedItems[0].ImageKey].Id;
+            Debug.WriteLine($"Reading content with ID: {id}");
+            List<JsonBlueprints.Image> images = GetImageList(id);
+
+            // Images mit den Bildern befüllen
+            
+            List<byte[]> byteImages = new List<byte[]>();
+            foreach (JsonBlueprints.Image img in images)
+            {
+                if (img.data != null && img.data.Length > 0)
+                {
+                    byteImages.Add(img.data);
+                    Debug.WriteLine($"Image {img.id} loaded");
+                }
+                else
+                {
+                    Debug.WriteLine($"Image with ID {img.id} has no data.");
+                }
+            }
+            Images = byteImages;
+            OnImageCollectionChanged();
+            Debug.WriteLine("Images set to new List!");
+            tabControlMain.SelectedIndex = 1;
+            buttonSelectRead.Enabled = true;
+            buttonSelectRead.Text = "Read";
+        }
+        private void listViewSelect_ItemActivate(object sender, EventArgs e)
+        {
+            buttonSelectRead_Click(sender, e);
+        }
+    }
+}

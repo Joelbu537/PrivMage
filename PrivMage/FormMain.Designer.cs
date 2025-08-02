@@ -1,0 +1,713 @@
+﻿using PrivMage;
+
+namespace PrImage
+{
+    partial class FormMain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            tabControlMain = new ArrowlessTabControl();
+            tabPageSelect = new TabPage();
+            tableLayoutPanelSelect = new TableLayoutPanel();
+            listViewSelect = new ListView();
+            tableLayoutPanelSelectInfo = new TableLayoutPanel();
+            pictureBoxSelectPreview = new PictureBox();
+            tableLayoutPanelSelectInfoLabels = new TableLayoutPanel();
+            labelSelectInfoName = new Label();
+            labelSelectInfoDate = new Label();
+            labelSelectInfoTags = new Label();
+            buttonSelectRead = new Button();
+            tabPageView = new TabPage();
+            tableLayoutPanelView = new TableLayoutPanel();
+            tableLayoutPanelViewControll = new TableLayoutPanel();
+            buttonViewPrevious = new Button();
+            buttonViewNext = new Button();
+            flowLayoutPanelViewControll = new FlowLayoutPanel();
+            textBoxViewCurrentImage = new TextBox();
+            labelViewMaxImages = new Label();
+            checkBoxViewOrignianResolution = new CheckBox();
+            pictureBoxView = new PictureBox();
+            tabPageEdit = new TabPage();
+            tabControlEdit = new ArrowlessTabControl();
+            tabPageEditNew = new TabPage();
+            tableLayoutPanelEditNew = new TableLayoutPanel();
+            labelEditNewTitle = new Label();
+            labelEditNewCover = new Label();
+            textBoxEditNewTitle = new TextBox();
+            textBoxEditNewCoverPath = new TextBox();
+            buttonEditNewCover = new Button();
+            buttonEditNewAddImage = new Button();
+            buttonEditNewRemoveImage = new Button();
+            listViewEditNewImages = new ListView();
+            columnHeaderImage = new ColumnHeader();
+            buttonEditNewCreate = new Button();
+            tabPageEditExport = new TabPage();
+            tableLayoutPanelEditExport = new TableLayoutPanel();
+            buttonEditExport = new Button();
+            listViewEditExport = new ListView();
+            columnHeaderName = new ColumnHeader();
+            imageList1 = new ImageList(components);
+            tabControlMain.SuspendLayout();
+            tabPageSelect.SuspendLayout();
+            tableLayoutPanelSelect.SuspendLayout();
+            tableLayoutPanelSelectInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectPreview).BeginInit();
+            tableLayoutPanelSelectInfoLabels.SuspendLayout();
+            tabPageView.SuspendLayout();
+            tableLayoutPanelView.SuspendLayout();
+            tableLayoutPanelViewControll.SuspendLayout();
+            flowLayoutPanelViewControll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxView).BeginInit();
+            tabPageEdit.SuspendLayout();
+            tabControlEdit.SuspendLayout();
+            tabPageEditNew.SuspendLayout();
+            tableLayoutPanelEditNew.SuspendLayout();
+            tabPageEditExport.SuspendLayout();
+            tableLayoutPanelEditExport.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tabControlMain
+            // 
+            tabControlMain.Controls.Add(tabPageSelect);
+            tabControlMain.Controls.Add(tabPageView);
+            tabControlMain.Controls.Add(tabPageEdit);
+            tabControlMain.Dock = DockStyle.Fill;
+            tabControlMain.Location = new Point(0, 0);
+            tabControlMain.Name = "tabControlMain";
+            tabControlMain.SelectedIndex = 0;
+            tabControlMain.Size = new Size(3000, 1352);
+            tabControlMain.TabIndex = 0;
+            tabControlMain.TabStop = false;
+            // 
+            // tabPageSelect
+            // 
+            tabPageSelect.Controls.Add(tableLayoutPanelSelect);
+            tabPageSelect.Location = new Point(4, 37);
+            tabPageSelect.Name = "tabPageSelect";
+            tabPageSelect.Padding = new Padding(3);
+            tabPageSelect.Size = new Size(2992, 1311);
+            tabPageSelect.TabIndex = 0;
+            tabPageSelect.Text = "Select";
+            tabPageSelect.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelSelect
+            // 
+            tableLayoutPanelSelect.ColumnCount = 2;
+            tableLayoutPanelSelect.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelect.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 800F));
+            tableLayoutPanelSelect.Controls.Add(listViewSelect, 0, 0);
+            tableLayoutPanelSelect.Controls.Add(tableLayoutPanelSelectInfo, 1, 0);
+            tableLayoutPanelSelect.Dock = DockStyle.Fill;
+            tableLayoutPanelSelect.Location = new Point(3, 3);
+            tableLayoutPanelSelect.Name = "tableLayoutPanelSelect";
+            tableLayoutPanelSelect.RowCount = 1;
+            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelect.Size = new Size(2986, 1305);
+            tableLayoutPanelSelect.TabIndex = 0;
+            // 
+            // listViewSelect
+            // 
+            listViewSelect.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewSelect.Location = new Point(3, 3);
+            listViewSelect.MultiSelect = false;
+            listViewSelect.Name = "listViewSelect";
+            listViewSelect.Size = new Size(2180, 1299);
+            listViewSelect.Sorting = SortOrder.Ascending;
+            listViewSelect.TabIndex = 1;
+            listViewSelect.UseCompatibleStateImageBehavior = false;
+            listViewSelect.ItemActivate += listViewSelect_ItemActivate;
+            // 
+            // tableLayoutPanelSelectInfo
+            // 
+            tableLayoutPanelSelectInfo.ColumnCount = 1;
+            tableLayoutPanelSelectInfo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectInfo.Controls.Add(pictureBoxSelectPreview, 0, 0);
+            tableLayoutPanelSelectInfo.Controls.Add(tableLayoutPanelSelectInfoLabels, 0, 1);
+            tableLayoutPanelSelectInfo.Dock = DockStyle.Fill;
+            tableLayoutPanelSelectInfo.Location = new Point(2189, 3);
+            tableLayoutPanelSelectInfo.Name = "tableLayoutPanelSelectInfo";
+            tableLayoutPanelSelectInfo.RowCount = 2;
+            tableLayoutPanelSelectInfo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectInfo.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
+            tableLayoutPanelSelectInfo.Size = new Size(794, 1299);
+            tableLayoutPanelSelectInfo.TabIndex = 1;
+            // 
+            // pictureBoxSelectPreview
+            // 
+            pictureBoxSelectPreview.Dock = DockStyle.Fill;
+            pictureBoxSelectPreview.Location = new Point(3, 3);
+            pictureBoxSelectPreview.Name = "pictureBoxSelectPreview";
+            pictureBoxSelectPreview.Size = new Size(788, 993);
+            pictureBoxSelectPreview.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxSelectPreview.TabIndex = 0;
+            pictureBoxSelectPreview.TabStop = false;
+            // 
+            // tableLayoutPanelSelectInfoLabels
+            // 
+            tableLayoutPanelSelectInfoLabels.ColumnCount = 1;
+            tableLayoutPanelSelectInfoLabels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoName, 0, 0);
+            tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoDate, 0, 1);
+            tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoTags, 0, 2);
+            tableLayoutPanelSelectInfoLabels.Controls.Add(buttonSelectRead, 0, 3);
+            tableLayoutPanelSelectInfoLabels.Dock = DockStyle.Fill;
+            tableLayoutPanelSelectInfoLabels.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tableLayoutPanelSelectInfoLabels.Location = new Point(3, 1002);
+            tableLayoutPanelSelectInfoLabels.Name = "tableLayoutPanelSelectInfoLabels";
+            tableLayoutPanelSelectInfoLabels.RowCount = 4;
+            tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle());
+            tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle());
+            tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanelSelectInfoLabels.Size = new Size(788, 294);
+            tableLayoutPanelSelectInfoLabels.TabIndex = 1;
+            // 
+            // labelSelectInfoName
+            // 
+            labelSelectInfoName.AutoSize = true;
+            labelSelectInfoName.Dock = DockStyle.Fill;
+            labelSelectInfoName.Location = new Point(6, 10);
+            labelSelectInfoName.Margin = new Padding(6, 10, 6, 10);
+            labelSelectInfoName.Name = "labelSelectInfoName";
+            labelSelectInfoName.Size = new Size(776, 28);
+            labelSelectInfoName.TabIndex = 0;
+            labelSelectInfoName.Text = "Title:";
+            // 
+            // labelSelectInfoDate
+            // 
+            labelSelectInfoDate.AutoSize = true;
+            labelSelectInfoDate.Dock = DockStyle.Fill;
+            labelSelectInfoDate.Location = new Point(6, 58);
+            labelSelectInfoDate.Margin = new Padding(6, 10, 6, 10);
+            labelSelectInfoDate.Name = "labelSelectInfoDate";
+            labelSelectInfoDate.Size = new Size(776, 28);
+            labelSelectInfoDate.TabIndex = 1;
+            labelSelectInfoDate.Text = "Created:";
+            // 
+            // labelSelectInfoTags
+            // 
+            labelSelectInfoTags.AutoSize = true;
+            labelSelectInfoTags.Dock = DockStyle.Fill;
+            labelSelectInfoTags.Location = new Point(6, 102);
+            labelSelectInfoTags.Margin = new Padding(6);
+            labelSelectInfoTags.Name = "labelSelectInfoTags";
+            labelSelectInfoTags.Size = new Size(776, 136);
+            labelSelectInfoTags.TabIndex = 2;
+            labelSelectInfoTags.Text = "Tags:";
+            // 
+            // buttonSelectRead
+            // 
+            buttonSelectRead.Dock = DockStyle.Fill;
+            buttonSelectRead.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSelectRead.Location = new Point(9, 248);
+            buttonSelectRead.Margin = new Padding(9, 4, 9, 4);
+            buttonSelectRead.Name = "buttonSelectRead";
+            buttonSelectRead.Size = new Size(770, 42);
+            buttonSelectRead.TabIndex = 0;
+            buttonSelectRead.Text = "Read";
+            buttonSelectRead.UseVisualStyleBackColor = true;
+            buttonSelectRead.Click += buttonSelectRead_Click;
+            // 
+            // tabPageView
+            // 
+            tabPageView.Controls.Add(tableLayoutPanelView);
+            tabPageView.Location = new Point(4, 37);
+            tabPageView.Name = "tabPageView";
+            tabPageView.Padding = new Padding(3);
+            tabPageView.Size = new Size(2992, 1311);
+            tabPageView.TabIndex = 1;
+            tabPageView.Text = "View";
+            tabPageView.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelView
+            // 
+            tableLayoutPanelView.BackColor = Color.FromArgb(48, 48, 48);
+            tableLayoutPanelView.ColumnCount = 1;
+            tableLayoutPanelView.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelView.Controls.Add(tableLayoutPanelViewControll, 0, 1);
+            tableLayoutPanelView.Controls.Add(pictureBoxView, 0, 0);
+            tableLayoutPanelView.Dock = DockStyle.Fill;
+            tableLayoutPanelView.Location = new Point(3, 3);
+            tableLayoutPanelView.Name = "tableLayoutPanelView";
+            tableLayoutPanelView.RowCount = 2;
+            tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanelView.Size = new Size(2986, 1305);
+            tableLayoutPanelView.TabIndex = 1;
+            // 
+            // tableLayoutPanelViewControll
+            // 
+            tableLayoutPanelViewControll.BackColor = Color.White;
+            tableLayoutPanelViewControll.ColumnCount = 5;
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelViewControll.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelViewControll.Controls.Add(buttonViewPrevious, 1, 0);
+            tableLayoutPanelViewControll.Controls.Add(buttonViewNext, 3, 0);
+            tableLayoutPanelViewControll.Controls.Add(flowLayoutPanelViewControll, 2, 0);
+            tableLayoutPanelViewControll.Controls.Add(checkBoxViewOrignianResolution, 4, 0);
+            tableLayoutPanelViewControll.Dock = DockStyle.Fill;
+            tableLayoutPanelViewControll.Font = new Font("Segoe UI", 12F);
+            tableLayoutPanelViewControll.Location = new Point(0, 1255);
+            tableLayoutPanelViewControll.Margin = new Padding(0);
+            tableLayoutPanelViewControll.Name = "tableLayoutPanelViewControll";
+            tableLayoutPanelViewControll.RowCount = 1;
+            tableLayoutPanelViewControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelViewControll.Size = new Size(2986, 50);
+            tableLayoutPanelViewControll.TabIndex = 1;
+            // 
+            // buttonViewPrevious
+            // 
+            buttonViewPrevious.AutoSize = true;
+            buttonViewPrevious.Dock = DockStyle.Fill;
+            buttonViewPrevious.Enabled = false;
+            buttonViewPrevious.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonViewPrevious.Location = new Point(1334, 3);
+            buttonViewPrevious.MinimumSize = new Size(100, 40);
+            buttonViewPrevious.Name = "buttonViewPrevious";
+            buttonViewPrevious.Size = new Size(123, 44);
+            buttonViewPrevious.TabIndex = 0;
+            buttonViewPrevious.TabStop = false;
+            buttonViewPrevious.Text = "Previous";
+            buttonViewPrevious.UseVisualStyleBackColor = true;
+            buttonViewPrevious.Click += buttonViewPrevious_Click;
+            // 
+            // buttonViewNext
+            // 
+            buttonViewNext.AutoSize = true;
+            buttonViewNext.Dock = DockStyle.Fill;
+            buttonViewNext.Enabled = false;
+            buttonViewNext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonViewNext.Location = new Point(1552, 3);
+            buttonViewNext.MinimumSize = new Size(100, 40);
+            buttonViewNext.Name = "buttonViewNext";
+            buttonViewNext.Size = new Size(100, 44);
+            buttonViewNext.TabIndex = 0;
+            buttonViewNext.TabStop = false;
+            buttonViewNext.Text = "Next";
+            buttonViewNext.UseVisualStyleBackColor = true;
+            buttonViewNext.Click += buttonViewNext_Click;
+            // 
+            // flowLayoutPanelViewControll
+            // 
+            flowLayoutPanelViewControll.AutoSize = true;
+            flowLayoutPanelViewControll.Controls.Add(textBoxViewCurrentImage);
+            flowLayoutPanelViewControll.Controls.Add(labelViewMaxImages);
+            flowLayoutPanelViewControll.Dock = DockStyle.Fill;
+            flowLayoutPanelViewControll.Location = new Point(1463, 3);
+            flowLayoutPanelViewControll.Name = "flowLayoutPanelViewControll";
+            flowLayoutPanelViewControll.Size = new Size(83, 44);
+            flowLayoutPanelViewControll.TabIndex = 3;
+            flowLayoutPanelViewControll.WrapContents = false;
+            // 
+            // textBoxViewCurrentImage
+            // 
+            textBoxViewCurrentImage.Dock = DockStyle.Fill;
+            textBoxViewCurrentImage.Location = new Point(3, 3);
+            textBoxViewCurrentImage.MinimumSize = new Size(35, 4);
+            textBoxViewCurrentImage.Name = "textBoxViewCurrentImage";
+            textBoxViewCurrentImage.Size = new Size(35, 39);
+            textBoxViewCurrentImage.TabIndex = 0;
+            textBoxViewCurrentImage.TabStop = false;
+            textBoxViewCurrentImage.Text = "1";
+            textBoxViewCurrentImage.TextChanged += textBoxViewCurrentImage_TextChanged;
+            // 
+            // labelViewMaxImages
+            // 
+            labelViewMaxImages.AutoSize = true;
+            labelViewMaxImages.Dock = DockStyle.Fill;
+            labelViewMaxImages.Location = new Point(44, 0);
+            labelViewMaxImages.MinimumSize = new Size(35, 0);
+            labelViewMaxImages.Name = "labelViewMaxImages";
+            labelViewMaxImages.Size = new Size(36, 32);
+            labelViewMaxImages.TabIndex = 1;
+            labelViewMaxImages.Text = "/1";
+            // 
+            // checkBoxViewOrignianResolution
+            // 
+            checkBoxViewOrignianResolution.AutoSize = true;
+            checkBoxViewOrignianResolution.Checked = true;
+            checkBoxViewOrignianResolution.CheckState = CheckState.Checked;
+            checkBoxViewOrignianResolution.Dock = DockStyle.Right;
+            checkBoxViewOrignianResolution.Location = new Point(2740, 3);
+            checkBoxViewOrignianResolution.Name = "checkBoxViewOrignianResolution";
+            checkBoxViewOrignianResolution.Size = new Size(243, 44);
+            checkBoxViewOrignianResolution.TabIndex = 0;
+            checkBoxViewOrignianResolution.TabStop = false;
+            checkBoxViewOrignianResolution.Text = "Original Resolution";
+            checkBoxViewOrignianResolution.UseVisualStyleBackColor = true;
+            checkBoxViewOrignianResolution.CheckedChanged += checkBoxViewOrignianResolution_CheckedChanged;
+            // 
+            // pictureBoxView
+            // 
+            pictureBoxView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBoxView.BackColor = Color.Transparent;
+            pictureBoxView.ErrorImage = PrivMage.Properties.Resources.fileError;
+            pictureBoxView.Image = PrivMage.Properties.Resources.image;
+            pictureBoxView.InitialImage = null;
+            pictureBoxView.Location = new Point(0, 0);
+            pictureBoxView.Margin = new Padding(0);
+            pictureBoxView.Name = "pictureBoxView";
+            pictureBoxView.Size = new Size(2986, 1255);
+            pictureBoxView.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBoxView.TabIndex = 2;
+            pictureBoxView.TabStop = false;
+            // 
+            // tabPageEdit
+            // 
+            tabPageEdit.Controls.Add(tabControlEdit);
+            tabPageEdit.Location = new Point(4, 34);
+            tabPageEdit.Name = "tabPageEdit";
+            tabPageEdit.Size = new Size(2992, 1314);
+            tabPageEdit.TabIndex = 2;
+            tabPageEdit.Text = "Edit";
+            tabPageEdit.UseVisualStyleBackColor = true;
+            // 
+            // tabControlEdit
+            // 
+            tabControlEdit.Controls.Add(tabPageEditNew);
+            tabControlEdit.Controls.Add(tabPageEditExport);
+            tabControlEdit.Dock = DockStyle.Fill;
+            tabControlEdit.Location = new Point(0, 0);
+            tabControlEdit.Name = "tabControlEdit";
+            tabControlEdit.SelectedIndex = 0;
+            tabControlEdit.Size = new Size(2992, 1314);
+            tabControlEdit.TabIndex = 0;
+            // 
+            // tabPageEditNew
+            // 
+            tabPageEditNew.Controls.Add(tableLayoutPanelEditNew);
+            tabPageEditNew.Font = new Font("Segoe UI", 12F);
+            tabPageEditNew.Location = new Point(4, 37);
+            tabPageEditNew.Name = "tabPageEditNew";
+            tabPageEditNew.Padding = new Padding(3);
+            tabPageEditNew.Size = new Size(2984, 1273);
+            tabPageEditNew.TabIndex = 0;
+            tabPageEditNew.Text = "Create New";
+            tabPageEditNew.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelEditNew
+            // 
+            tableLayoutPanelEditNew.ColumnCount = 3;
+            tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelEditNew.Controls.Add(labelEditNewTitle, 0, 0);
+            tableLayoutPanelEditNew.Controls.Add(labelEditNewCover, 0, 1);
+            tableLayoutPanelEditNew.Controls.Add(textBoxEditNewTitle, 1, 0);
+            tableLayoutPanelEditNew.Controls.Add(textBoxEditNewCoverPath, 1, 1);
+            tableLayoutPanelEditNew.Controls.Add(buttonEditNewCover, 2, 1);
+            tableLayoutPanelEditNew.Controls.Add(buttonEditNewAddImage, 0, 2);
+            tableLayoutPanelEditNew.Controls.Add(buttonEditNewRemoveImage, 2, 2);
+            tableLayoutPanelEditNew.Controls.Add(listViewEditNewImages, 1, 2);
+            tableLayoutPanelEditNew.Controls.Add(buttonEditNewCreate, 2, 0);
+            tableLayoutPanelEditNew.Dock = DockStyle.Fill;
+            tableLayoutPanelEditNew.Location = new Point(3, 3);
+            tableLayoutPanelEditNew.Name = "tableLayoutPanelEditNew";
+            tableLayoutPanelEditNew.RowCount = 3;
+            tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditNew.Size = new Size(2978, 1267);
+            tableLayoutPanelEditNew.TabIndex = 0;
+            // 
+            // labelEditNewTitle
+            // 
+            labelEditNewTitle.AutoSize = true;
+            labelEditNewTitle.Dock = DockStyle.Fill;
+            labelEditNewTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelEditNewTitle.Location = new Point(3, 0);
+            labelEditNewTitle.Name = "labelEditNewTitle";
+            labelEditNewTitle.Size = new Size(194, 60);
+            labelEditNewTitle.TabIndex = 0;
+            labelEditNewTitle.Text = "Title:";
+            // 
+            // labelEditNewCover
+            // 
+            labelEditNewCover.AutoSize = true;
+            labelEditNewCover.Dock = DockStyle.Fill;
+            labelEditNewCover.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelEditNewCover.Location = new Point(3, 60);
+            labelEditNewCover.Name = "labelEditNewCover";
+            labelEditNewCover.Size = new Size(194, 60);
+            labelEditNewCover.TabIndex = 1;
+            labelEditNewCover.Text = "Cover Image:";
+            // 
+            // textBoxEditNewTitle
+            // 
+            textBoxEditNewTitle.Dock = DockStyle.Fill;
+            textBoxEditNewTitle.Location = new Point(203, 3);
+            textBoxEditNewTitle.Name = "textBoxEditNewTitle";
+            textBoxEditNewTitle.Size = new Size(2550, 39);
+            textBoxEditNewTitle.TabIndex = 0;
+            textBoxEditNewTitle.TextChanged += textBoxEditNewTitle_TextChanged;
+            // 
+            // textBoxEditNewCoverPath
+            // 
+            textBoxEditNewCoverPath.Dock = DockStyle.Fill;
+            textBoxEditNewCoverPath.Location = new Point(203, 63);
+            textBoxEditNewCoverPath.Name = "textBoxEditNewCoverPath";
+            textBoxEditNewCoverPath.ReadOnly = true;
+            textBoxEditNewCoverPath.Size = new Size(2550, 39);
+            textBoxEditNewCoverPath.TabIndex = 0;
+            textBoxEditNewCoverPath.TabStop = false;
+            // 
+            // buttonEditNewCover
+            // 
+            buttonEditNewCover.AutoSize = true;
+            buttonEditNewCover.Dock = DockStyle.Fill;
+            buttonEditNewCover.Location = new Point(2766, 66);
+            buttonEditNewCover.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewCover.Name = "buttonEditNewCover";
+            buttonEditNewCover.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewCover.Size = new Size(202, 48);
+            buttonEditNewCover.TabIndex = 0;
+            buttonEditNewCover.Text = "Search";
+            buttonEditNewCover.UseVisualStyleBackColor = true;
+            buttonEditNewCover.Click += buttonEditNewCover_Click;
+            // 
+            // buttonEditNewAddImage
+            // 
+            buttonEditNewAddImage.AutoSize = true;
+            buttonEditNewAddImage.Dock = DockStyle.Top;
+            buttonEditNewAddImage.Location = new Point(10, 126);
+            buttonEditNewAddImage.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewAddImage.Name = "buttonEditNewAddImage";
+            buttonEditNewAddImage.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewAddImage.Size = new Size(180, 42);
+            buttonEditNewAddImage.TabIndex = 1;
+            buttonEditNewAddImage.Text = "Add Image";
+            buttonEditNewAddImage.UseVisualStyleBackColor = true;
+            buttonEditNewAddImage.Click += buttonEditNewAddImage_Click;
+            // 
+            // buttonEditNewRemoveImage
+            // 
+            buttonEditNewRemoveImage.AutoSize = true;
+            buttonEditNewRemoveImage.Dock = DockStyle.Top;
+            buttonEditNewRemoveImage.Enabled = false;
+            buttonEditNewRemoveImage.Location = new Point(2766, 126);
+            buttonEditNewRemoveImage.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewRemoveImage.Name = "buttonEditNewRemoveImage";
+            buttonEditNewRemoveImage.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewRemoveImage.Size = new Size(202, 42);
+            buttonEditNewRemoveImage.TabIndex = 0;
+            buttonEditNewRemoveImage.TabStop = false;
+            buttonEditNewRemoveImage.Text = "Delete Selected";
+            buttonEditNewRemoveImage.UseVisualStyleBackColor = true;
+            buttonEditNewRemoveImage.Click += buttonEditNewRemoveImage_Click;
+            // 
+            // listViewEditNewImages
+            // 
+            listViewEditNewImages.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewEditNewImages.Columns.AddRange(new ColumnHeader[] { columnHeaderImage });
+            listViewEditNewImages.FullRowSelect = true;
+            listViewEditNewImages.GridLines = true;
+            listViewEditNewImages.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listViewEditNewImages.Location = new Point(203, 123);
+            listViewEditNewImages.Name = "listViewEditNewImages";
+            listViewEditNewImages.Size = new Size(2550, 1141);
+            listViewEditNewImages.TabIndex = 7;
+            listViewEditNewImages.TabStop = false;
+            listViewEditNewImages.UseCompatibleStateImageBehavior = false;
+            listViewEditNewImages.View = View.Details;
+            listViewEditNewImages.SelectedIndexChanged += listViewEditNewImages_SelectedIndexChanged;
+            // 
+            // columnHeaderImage
+            // 
+            columnHeaderImage.Text = "Image";
+            columnHeaderImage.Width = 9999;
+            // 
+            // buttonEditNewCreate
+            // 
+            buttonEditNewCreate.Dock = DockStyle.Fill;
+            buttonEditNewCreate.Enabled = false;
+            buttonEditNewCreate.Location = new Point(2766, 6);
+            buttonEditNewCreate.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewCreate.Name = "buttonEditNewCreate";
+            buttonEditNewCreate.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewCreate.Size = new Size(202, 48);
+            buttonEditNewCreate.TabIndex = 2;
+            buttonEditNewCreate.Text = "Create";
+            buttonEditNewCreate.UseVisualStyleBackColor = true;
+            buttonEditNewCreate.Click += buttonEditNewCreate_Click;
+            // 
+            // tabPageEditExport
+            // 
+            tabPageEditExport.Controls.Add(tableLayoutPanelEditExport);
+            tabPageEditExport.Location = new Point(4, 34);
+            tabPageEditExport.Name = "tabPageEditExport";
+            tabPageEditExport.Padding = new Padding(3);
+            tabPageEditExport.Size = new Size(2984, 1276);
+            tabPageEditExport.TabIndex = 1;
+            tabPageEditExport.Text = "Export";
+            tabPageEditExport.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelEditExport
+            // 
+            tableLayoutPanelEditExport.ColumnCount = 1;
+            tableLayoutPanelEditExport.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditExport.Controls.Add(buttonEditExport, 0, 1);
+            tableLayoutPanelEditExport.Controls.Add(listViewEditExport, 0, 0);
+            tableLayoutPanelEditExport.Dock = DockStyle.Fill;
+            tableLayoutPanelEditExport.Location = new Point(3, 3);
+            tableLayoutPanelEditExport.Name = "tableLayoutPanelEditExport";
+            tableLayoutPanelEditExport.RowCount = 2;
+            tableLayoutPanelEditExport.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditExport.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditExport.Size = new Size(2978, 1270);
+            tableLayoutPanelEditExport.TabIndex = 0;
+            // 
+            // buttonEditExport
+            // 
+            buttonEditExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonEditExport.AutoSize = true;
+            buttonEditExport.Enabled = false;
+            buttonEditExport.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            buttonEditExport.Location = new Point(10, 1222);
+            buttonEditExport.Margin = new Padding(10, 6, 10, 6);
+            buttonEditExport.Name = "buttonEditExport";
+            buttonEditExport.Padding = new Padding(5, 0, 5, 0);
+            buttonEditExport.Size = new Size(2958, 42);
+            buttonEditExport.TabIndex = 0;
+            buttonEditExport.Text = "Export";
+            buttonEditExport.UseVisualStyleBackColor = true;
+            buttonEditExport.Click += buttonEditExport_Click;
+            // 
+            // listViewEditExport
+            // 
+            listViewEditExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewEditExport.Columns.AddRange(new ColumnHeader[] { columnHeaderName });
+            listViewEditExport.FullRowSelect = true;
+            listViewEditExport.Location = new Point(3, 3);
+            listViewEditExport.MultiSelect = false;
+            listViewEditExport.Name = "listViewEditExport";
+            listViewEditExport.Size = new Size(2972, 1210);
+            listViewEditExport.Sorting = SortOrder.Ascending;
+            listViewEditExport.TabIndex = 1;
+            listViewEditExport.UseCompatibleStateImageBehavior = false;
+            listViewEditExport.View = View.Details;
+            listViewEditExport.SelectedIndexChanged += listViewEditExport_SelectedIndexChanged;
+            // 
+            // columnHeaderName
+            // 
+            columnHeaderName.Text = "Name";
+            columnHeaderName.Width = 9999;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(3000, 1352);
+            Controls.Add(tabControlMain);
+            Font = new Font("Segoe UI", 10F);
+            Margin = new Padding(4);
+            Name = "FormMain";
+            ShowIcon = false;
+            Text = "PrivMage";
+            WindowState = FormWindowState.Maximized;
+            tabControlMain.ResumeLayout(false);
+            tabPageSelect.ResumeLayout(false);
+            tableLayoutPanelSelect.ResumeLayout(false);
+            tableLayoutPanelSelectInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectPreview).EndInit();
+            tableLayoutPanelSelectInfoLabels.ResumeLayout(false);
+            tableLayoutPanelSelectInfoLabels.PerformLayout();
+            tabPageView.ResumeLayout(false);
+            tableLayoutPanelView.ResumeLayout(false);
+            tableLayoutPanelViewControll.ResumeLayout(false);
+            tableLayoutPanelViewControll.PerformLayout();
+            flowLayoutPanelViewControll.ResumeLayout(false);
+            flowLayoutPanelViewControll.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxView).EndInit();
+            tabPageEdit.ResumeLayout(false);
+            tabControlEdit.ResumeLayout(false);
+            tabPageEditNew.ResumeLayout(false);
+            tableLayoutPanelEditNew.ResumeLayout(false);
+            tableLayoutPanelEditNew.PerformLayout();
+            tabPageEditExport.ResumeLayout(false);
+            tableLayoutPanelEditExport.ResumeLayout(false);
+            tableLayoutPanelEditExport.PerformLayout();
+            ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private ArrowlessTabControl tabControlMain;
+        private System.Windows.Forms.TabPage tabPageSelect;
+        private System.Windows.Forms.TabPage tabPageView;
+        private System.Windows.Forms.TabPage tabPageEdit;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelView;
+        private System.Windows.Forms.CheckBox checkBoxViewOrignianResolution;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelViewControll;
+        private System.Windows.Forms.Button buttonViewPrevious;
+        private System.Windows.Forms.Button buttonViewNext;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelViewControll;
+        private System.Windows.Forms.TextBox textBoxViewCurrentImage;
+        private System.Windows.Forms.Label labelViewMaxImages;
+        private System.Windows.Forms.PictureBox pictureBoxView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSelect;
+        private System.Windows.Forms.ListView listViewSelect;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSelectInfo;
+        private System.Windows.Forms.PictureBox pictureBoxSelectPreview;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSelectInfoLabels;
+        private System.Windows.Forms.Label labelSelectInfoName;
+        private System.Windows.Forms.Label labelSelectInfoDate;
+        private System.Windows.Forms.Label labelSelectInfoTags;
+        private System.Windows.Forms.Button buttonSelectRead;
+        private ArrowlessTabControl tabControlEdit;
+        private System.Windows.Forms.TabPage tabPageEditNew;
+        private System.Windows.Forms.TabPage tabPageEditExport;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEditNew;
+        private System.Windows.Forms.Label labelEditNewTitle;
+        private System.Windows.Forms.Label labelEditNewCover;
+        private System.Windows.Forms.TextBox textBoxEditNewTitle;
+        private System.Windows.Forms.TextBox textBoxEditNewCoverPath;
+        private System.Windows.Forms.Button buttonEditNewCover;
+        private System.Windows.Forms.Button buttonEditNewAddImage;
+        private System.Windows.Forms.Button buttonEditNewRemoveImage;
+        private System.Windows.Forms.ListView listViewEditNewImages;
+        private System.Windows.Forms.Button buttonEditNewCreate;
+        private System.Windows.Forms.ColumnHeader columnHeaderImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEditExport;
+        private System.Windows.Forms.Button buttonEditExport;
+        private System.Windows.Forms.ListView listViewEditExport;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+    }
+}
+
