@@ -21,9 +21,9 @@ Album data is collectively stored in a single library file, whereas the contents
 
 **Folder Structure:**
 PrivMage/  
-├── PrivMage.exe  The application  
-├── lib           The library file  
-├── 743820156     Album  
-├── 1384291207    Album  
-├── 1952740528    Album  
-└── 2031508933    Album  
+├── PrivMage.exe&nbsp;&nbsp;The application  
+├── lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The library file  
+├── 743820156&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Album  
+├── 1384291207&nbsp;&nbsp;&nbsp;&nbsp;Album  
+├── 1952740528&nbsp;&nbsp;&nbsp;&nbsp;Album  
+└── 2031508933&nbsp;&nbsp;&nbsp;&nbsp;Album  
