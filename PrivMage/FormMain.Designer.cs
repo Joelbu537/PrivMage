@@ -598,6 +598,7 @@ namespace PrImage
             // textBoxEditNewTags
             // 
             textBoxEditNewTags.AcceptsReturn = true;
+            textBoxEditNewTags.BackColor = Color.FromArgb(224, 224, 224);
             textBoxEditNewTags.Dock = DockStyle.Fill;
             textBoxEditNewTags.Location = new Point(3, 89);
             textBoxEditNewTags.Multiline = true;
