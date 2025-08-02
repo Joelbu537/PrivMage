@@ -149,15 +149,20 @@ namespace PrImage
                 MD5 = Program.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(content)),
                 Content = EncryptStringToBase64(content, key, iv)
             };
-            LibraryContents.Add(new JsonBlueprints.LibraryContent
+            LibraryContent lib = new JsonBlueprints.LibraryContent
             {
                 Name = textBoxEditNewTitle.Text,
                 DateCreated = DateTime.Now,
                 DateModified = DateTime.Now,
-                Tags = new List<string>(),
+                Tags = textBoxEditNewTags.Lines.ToList<string>(),
                 Id = id,
                 Data = File.ReadAllBytes(textBoxEditNewCoverPath.Text)
-            });
+            };
+            foreach (string tag in lib.Tags)
+            {
+                tag.Replace(" ", "_");
+            }
+            LibraryContents.Add(lib);
             File.WriteAllText($"{id}", Newtonsoft.Json.JsonConvert.SerializeObject(imageCollection));
             LibraryFile libraryFile = new LibraryFile
             {

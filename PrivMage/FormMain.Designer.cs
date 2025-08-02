@@ -42,6 +42,7 @@ namespace PrImage
             labelSelectInfoDate = new Label();
             labelSelectInfoTags = new Label();
             buttonSelectRead = new Button();
+            labelSelectInfoID = new Label();
             tabPageView = new TabPage();
             tableLayoutPanelView = new TableLayoutPanel();
             tableLayoutPanelViewControll = new TableLayoutPanel();
@@ -61,11 +62,14 @@ namespace PrImage
             textBoxEditNewTitle = new TextBox();
             textBoxEditNewCoverPath = new TextBox();
             buttonEditNewCover = new Button();
-            buttonEditNewAddImage = new Button();
-            buttonEditNewRemoveImage = new Button();
             listViewEditNewImages = new ListView();
             columnHeaderImage = new ColumnHeader();
             buttonEditNewCreate = new Button();
+            buttonEditNewRemoveImage = new Button();
+            tableLayoutPanelEditNewLeftControll = new TableLayoutPanel();
+            buttonEditNewAddImage = new Button();
+            textBoxEditNewTags = new TextBox();
+            labelEditNewTags = new Label();
             tabPageEditExport = new TabPage();
             tableLayoutPanelEditExport = new TableLayoutPanel();
             buttonEditExport = new Button();
@@ -87,6 +91,7 @@ namespace PrImage
             tabControlEdit.SuspendLayout();
             tabPageEditNew.SuspendLayout();
             tableLayoutPanelEditNew.SuspendLayout();
+            tableLayoutPanelEditNewLeftControll.SuspendLayout();
             tabPageEditExport.SuspendLayout();
             tableLayoutPanelEditExport.SuspendLayout();
             SuspendLayout();
@@ -100,7 +105,7 @@ namespace PrImage
             tabControlMain.Location = new Point(0, 0);
             tabControlMain.Name = "tabControlMain";
             tabControlMain.SelectedIndex = 0;
-            tabControlMain.Size = new Size(3000, 1352);
+            tabControlMain.Size = new Size(1772, 1123);
             tabControlMain.TabIndex = 0;
             tabControlMain.TabStop = false;
             // 
@@ -110,7 +115,7 @@ namespace PrImage
             tabPageSelect.Location = new Point(4, 37);
             tabPageSelect.Name = "tabPageSelect";
             tabPageSelect.Padding = new Padding(3);
-            tabPageSelect.Size = new Size(2992, 1311);
+            tabPageSelect.Size = new Size(1764, 1082);
             tabPageSelect.TabIndex = 0;
             tabPageSelect.Text = "Select";
             tabPageSelect.UseVisualStyleBackColor = true;
@@ -127,16 +132,17 @@ namespace PrImage
             tableLayoutPanelSelect.Name = "tableLayoutPanelSelect";
             tableLayoutPanelSelect.RowCount = 1;
             tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelSelect.Size = new Size(2986, 1305);
+            tableLayoutPanelSelect.Size = new Size(1758, 1076);
             tableLayoutPanelSelect.TabIndex = 0;
             // 
             // listViewSelect
             // 
             listViewSelect.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listViewSelect.Location = new Point(3, 3);
+            listViewSelect.Location = new Point(3, 30);
+            listViewSelect.Margin = new Padding(3, 30, 3, 3);
             listViewSelect.MultiSelect = false;
             listViewSelect.Name = "listViewSelect";
-            listViewSelect.Size = new Size(2180, 1299);
+            listViewSelect.Size = new Size(952, 1043);
             listViewSelect.Sorting = SortOrder.Ascending;
             listViewSelect.TabIndex = 1;
             listViewSelect.UseCompatibleStateImageBehavior = false;
@@ -149,12 +155,12 @@ namespace PrImage
             tableLayoutPanelSelectInfo.Controls.Add(pictureBoxSelectPreview, 0, 0);
             tableLayoutPanelSelectInfo.Controls.Add(tableLayoutPanelSelectInfoLabels, 0, 1);
             tableLayoutPanelSelectInfo.Dock = DockStyle.Fill;
-            tableLayoutPanelSelectInfo.Location = new Point(2189, 3);
+            tableLayoutPanelSelectInfo.Location = new Point(961, 3);
             tableLayoutPanelSelectInfo.Name = "tableLayoutPanelSelectInfo";
             tableLayoutPanelSelectInfo.RowCount = 2;
             tableLayoutPanelSelectInfo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelSelectInfo.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
-            tableLayoutPanelSelectInfo.Size = new Size(794, 1299);
+            tableLayoutPanelSelectInfo.Size = new Size(794, 1070);
             tableLayoutPanelSelectInfo.TabIndex = 1;
             // 
             // pictureBoxSelectPreview
@@ -162,7 +168,7 @@ namespace PrImage
             pictureBoxSelectPreview.Dock = DockStyle.Fill;
             pictureBoxSelectPreview.Location = new Point(3, 3);
             pictureBoxSelectPreview.Name = "pictureBoxSelectPreview";
-            pictureBoxSelectPreview.Size = new Size(788, 993);
+            pictureBoxSelectPreview.Size = new Size(788, 764);
             pictureBoxSelectPreview.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxSelectPreview.TabIndex = 0;
             pictureBoxSelectPreview.TabStop = false;
@@ -174,15 +180,17 @@ namespace PrImage
             tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoName, 0, 0);
             tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoDate, 0, 1);
             tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoTags, 0, 2);
-            tableLayoutPanelSelectInfoLabels.Controls.Add(buttonSelectRead, 0, 3);
+            tableLayoutPanelSelectInfoLabels.Controls.Add(buttonSelectRead, 0, 4);
+            tableLayoutPanelSelectInfoLabels.Controls.Add(labelSelectInfoID, 0, 3);
             tableLayoutPanelSelectInfoLabels.Dock = DockStyle.Fill;
             tableLayoutPanelSelectInfoLabels.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tableLayoutPanelSelectInfoLabels.Location = new Point(3, 1002);
+            tableLayoutPanelSelectInfoLabels.Location = new Point(3, 773);
             tableLayoutPanelSelectInfoLabels.Name = "tableLayoutPanelSelectInfoLabels";
-            tableLayoutPanelSelectInfoLabels.RowCount = 4;
+            tableLayoutPanelSelectInfoLabels.RowCount = 5;
             tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle());
             tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle());
             tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle());
             tableLayoutPanelSelectInfoLabels.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanelSelectInfoLabels.Size = new Size(788, 294);
             tableLayoutPanelSelectInfoLabels.TabIndex = 1;
@@ -216,7 +224,7 @@ namespace PrImage
             labelSelectInfoTags.Location = new Point(6, 102);
             labelSelectInfoTags.Margin = new Padding(6);
             labelSelectInfoTags.Name = "labelSelectInfoTags";
-            labelSelectInfoTags.Size = new Size(776, 136);
+            labelSelectInfoTags.Size = new Size(776, 88);
             labelSelectInfoTags.TabIndex = 2;
             labelSelectInfoTags.Text = "Tags:";
             // 
@@ -233,13 +241,24 @@ namespace PrImage
             buttonSelectRead.UseVisualStyleBackColor = true;
             buttonSelectRead.Click += buttonSelectRead_Click;
             // 
+            // labelSelectInfoID
+            // 
+            labelSelectInfoID.AutoSize = true;
+            labelSelectInfoID.Dock = DockStyle.Fill;
+            labelSelectInfoID.Location = new Point(6, 206);
+            labelSelectInfoID.Margin = new Padding(6, 10, 6, 10);
+            labelSelectInfoID.Name = "labelSelectInfoID";
+            labelSelectInfoID.Size = new Size(776, 28);
+            labelSelectInfoID.TabIndex = 3;
+            labelSelectInfoID.Text = "ID:";
+            // 
             // tabPageView
             // 
             tabPageView.Controls.Add(tableLayoutPanelView);
-            tabPageView.Location = new Point(4, 37);
+            tabPageView.Location = new Point(4, 34);
             tabPageView.Name = "tabPageView";
             tabPageView.Padding = new Padding(3);
-            tabPageView.Size = new Size(2992, 1311);
+            tabPageView.Size = new Size(1764, 1085);
             tabPageView.TabIndex = 1;
             tabPageView.Text = "View";
             tabPageView.UseVisualStyleBackColor = true;
@@ -257,7 +276,7 @@ namespace PrImage
             tableLayoutPanelView.RowCount = 2;
             tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanelView.Size = new Size(2986, 1305);
+            tableLayoutPanelView.Size = new Size(1758, 1079);
             tableLayoutPanelView.TabIndex = 1;
             // 
             // tableLayoutPanelViewControll
@@ -276,12 +295,12 @@ namespace PrImage
             tableLayoutPanelViewControll.Controls.Add(checkBoxViewOrignianResolution, 4, 0);
             tableLayoutPanelViewControll.Dock = DockStyle.Fill;
             tableLayoutPanelViewControll.Font = new Font("Segoe UI", 12F);
-            tableLayoutPanelViewControll.Location = new Point(0, 1255);
+            tableLayoutPanelViewControll.Location = new Point(0, 1029);
             tableLayoutPanelViewControll.Margin = new Padding(0);
             tableLayoutPanelViewControll.Name = "tableLayoutPanelViewControll";
             tableLayoutPanelViewControll.RowCount = 1;
             tableLayoutPanelViewControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelViewControll.Size = new Size(2986, 50);
+            tableLayoutPanelViewControll.Size = new Size(1758, 50);
             tableLayoutPanelViewControll.TabIndex = 1;
             // 
             // buttonViewPrevious
@@ -290,7 +309,7 @@ namespace PrImage
             buttonViewPrevious.Dock = DockStyle.Fill;
             buttonViewPrevious.Enabled = false;
             buttonViewPrevious.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonViewPrevious.Location = new Point(1334, 3);
+            buttonViewPrevious.Location = new Point(720, 3);
             buttonViewPrevious.MinimumSize = new Size(100, 40);
             buttonViewPrevious.Name = "buttonViewPrevious";
             buttonViewPrevious.Size = new Size(123, 44);
@@ -306,7 +325,7 @@ namespace PrImage
             buttonViewNext.Dock = DockStyle.Fill;
             buttonViewNext.Enabled = false;
             buttonViewNext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonViewNext.Location = new Point(1552, 3);
+            buttonViewNext.Location = new Point(938, 3);
             buttonViewNext.MinimumSize = new Size(100, 40);
             buttonViewNext.Name = "buttonViewNext";
             buttonViewNext.Size = new Size(100, 44);
@@ -322,7 +341,7 @@ namespace PrImage
             flowLayoutPanelViewControll.Controls.Add(textBoxViewCurrentImage);
             flowLayoutPanelViewControll.Controls.Add(labelViewMaxImages);
             flowLayoutPanelViewControll.Dock = DockStyle.Fill;
-            flowLayoutPanelViewControll.Location = new Point(1463, 3);
+            flowLayoutPanelViewControll.Location = new Point(849, 3);
             flowLayoutPanelViewControll.Name = "flowLayoutPanelViewControll";
             flowLayoutPanelViewControll.Size = new Size(83, 44);
             flowLayoutPanelViewControll.TabIndex = 3;
@@ -357,7 +376,7 @@ namespace PrImage
             checkBoxViewOrignianResolution.Checked = true;
             checkBoxViewOrignianResolution.CheckState = CheckState.Checked;
             checkBoxViewOrignianResolution.Dock = DockStyle.Right;
-            checkBoxViewOrignianResolution.Location = new Point(2740, 3);
+            checkBoxViewOrignianResolution.Location = new Point(1512, 3);
             checkBoxViewOrignianResolution.Name = "checkBoxViewOrignianResolution";
             checkBoxViewOrignianResolution.Size = new Size(243, 44);
             checkBoxViewOrignianResolution.TabIndex = 0;
@@ -376,7 +395,7 @@ namespace PrImage
             pictureBoxView.Location = new Point(0, 0);
             pictureBoxView.Margin = new Padding(0);
             pictureBoxView.Name = "pictureBoxView";
-            pictureBoxView.Size = new Size(2986, 1255);
+            pictureBoxView.Size = new Size(1758, 1029);
             pictureBoxView.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBoxView.TabIndex = 2;
             pictureBoxView.TabStop = false;
@@ -384,9 +403,9 @@ namespace PrImage
             // tabPageEdit
             // 
             tabPageEdit.Controls.Add(tabControlEdit);
-            tabPageEdit.Location = new Point(4, 34);
+            tabPageEdit.Location = new Point(4, 37);
             tabPageEdit.Name = "tabPageEdit";
-            tabPageEdit.Size = new Size(2992, 1314);
+            tabPageEdit.Size = new Size(1764, 1082);
             tabPageEdit.TabIndex = 2;
             tabPageEdit.Text = "Edit";
             tabPageEdit.UseVisualStyleBackColor = true;
@@ -399,7 +418,7 @@ namespace PrImage
             tabControlEdit.Location = new Point(0, 0);
             tabControlEdit.Name = "tabControlEdit";
             tabControlEdit.SelectedIndex = 0;
-            tabControlEdit.Size = new Size(2992, 1314);
+            tabControlEdit.Size = new Size(1764, 1082);
             tabControlEdit.TabIndex = 0;
             // 
             // tabPageEditNew
@@ -409,7 +428,7 @@ namespace PrImage
             tabPageEditNew.Location = new Point(4, 37);
             tabPageEditNew.Name = "tabPageEditNew";
             tabPageEditNew.Padding = new Padding(3);
-            tabPageEditNew.Size = new Size(2984, 1273);
+            tabPageEditNew.Size = new Size(1756, 1041);
             tabPageEditNew.TabIndex = 0;
             tabPageEditNew.Text = "Create New";
             tabPageEditNew.UseVisualStyleBackColor = true;
@@ -417,7 +436,7 @@ namespace PrImage
             // tableLayoutPanelEditNew
             // 
             tableLayoutPanelEditNew.ColumnCount = 3;
-            tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanelEditNew.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanelEditNew.Controls.Add(labelEditNewTitle, 0, 0);
@@ -425,10 +444,10 @@ namespace PrImage
             tableLayoutPanelEditNew.Controls.Add(textBoxEditNewTitle, 1, 0);
             tableLayoutPanelEditNew.Controls.Add(textBoxEditNewCoverPath, 1, 1);
             tableLayoutPanelEditNew.Controls.Add(buttonEditNewCover, 2, 1);
-            tableLayoutPanelEditNew.Controls.Add(buttonEditNewAddImage, 0, 2);
-            tableLayoutPanelEditNew.Controls.Add(buttonEditNewRemoveImage, 2, 2);
             tableLayoutPanelEditNew.Controls.Add(listViewEditNewImages, 1, 2);
             tableLayoutPanelEditNew.Controls.Add(buttonEditNewCreate, 2, 0);
+            tableLayoutPanelEditNew.Controls.Add(buttonEditNewRemoveImage, 2, 2);
+            tableLayoutPanelEditNew.Controls.Add(tableLayoutPanelEditNewLeftControll, 0, 2);
             tableLayoutPanelEditNew.Dock = DockStyle.Fill;
             tableLayoutPanelEditNew.Location = new Point(3, 3);
             tableLayoutPanelEditNew.Name = "tableLayoutPanelEditNew";
@@ -436,7 +455,7 @@ namespace PrImage
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelEditNew.Size = new Size(2978, 1267);
+            tableLayoutPanelEditNew.Size = new Size(1750, 1035);
             tableLayoutPanelEditNew.TabIndex = 0;
             // 
             // labelEditNewTitle
@@ -446,7 +465,7 @@ namespace PrImage
             labelEditNewTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelEditNewTitle.Location = new Point(3, 0);
             labelEditNewTitle.Name = "labelEditNewTitle";
-            labelEditNewTitle.Size = new Size(194, 60);
+            labelEditNewTitle.Size = new Size(244, 60);
             labelEditNewTitle.TabIndex = 0;
             labelEditNewTitle.Text = "Title:";
             // 
@@ -457,26 +476,26 @@ namespace PrImage
             labelEditNewCover.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelEditNewCover.Location = new Point(3, 60);
             labelEditNewCover.Name = "labelEditNewCover";
-            labelEditNewCover.Size = new Size(194, 60);
+            labelEditNewCover.Size = new Size(244, 60);
             labelEditNewCover.TabIndex = 1;
             labelEditNewCover.Text = "Cover Image:";
             // 
             // textBoxEditNewTitle
             // 
             textBoxEditNewTitle.Dock = DockStyle.Fill;
-            textBoxEditNewTitle.Location = new Point(203, 3);
+            textBoxEditNewTitle.Location = new Point(253, 3);
             textBoxEditNewTitle.Name = "textBoxEditNewTitle";
-            textBoxEditNewTitle.Size = new Size(2550, 39);
+            textBoxEditNewTitle.Size = new Size(1272, 39);
             textBoxEditNewTitle.TabIndex = 0;
             textBoxEditNewTitle.TextChanged += textBoxEditNewTitle_TextChanged;
             // 
             // textBoxEditNewCoverPath
             // 
             textBoxEditNewCoverPath.Dock = DockStyle.Fill;
-            textBoxEditNewCoverPath.Location = new Point(203, 63);
+            textBoxEditNewCoverPath.Location = new Point(253, 63);
             textBoxEditNewCoverPath.Name = "textBoxEditNewCoverPath";
             textBoxEditNewCoverPath.ReadOnly = true;
-            textBoxEditNewCoverPath.Size = new Size(2550, 39);
+            textBoxEditNewCoverPath.Size = new Size(1272, 39);
             textBoxEditNewCoverPath.TabIndex = 0;
             textBoxEditNewCoverPath.TabStop = false;
             // 
@@ -484,7 +503,7 @@ namespace PrImage
             // 
             buttonEditNewCover.AutoSize = true;
             buttonEditNewCover.Dock = DockStyle.Fill;
-            buttonEditNewCover.Location = new Point(2766, 66);
+            buttonEditNewCover.Location = new Point(1538, 66);
             buttonEditNewCover.Margin = new Padding(10, 6, 10, 6);
             buttonEditNewCover.Name = "buttonEditNewCover";
             buttonEditNewCover.Padding = new Padding(5, 0, 5, 0);
@@ -494,36 +513,6 @@ namespace PrImage
             buttonEditNewCover.UseVisualStyleBackColor = true;
             buttonEditNewCover.Click += buttonEditNewCover_Click;
             // 
-            // buttonEditNewAddImage
-            // 
-            buttonEditNewAddImage.AutoSize = true;
-            buttonEditNewAddImage.Dock = DockStyle.Top;
-            buttonEditNewAddImage.Location = new Point(10, 126);
-            buttonEditNewAddImage.Margin = new Padding(10, 6, 10, 6);
-            buttonEditNewAddImage.Name = "buttonEditNewAddImage";
-            buttonEditNewAddImage.Padding = new Padding(5, 0, 5, 0);
-            buttonEditNewAddImage.Size = new Size(180, 42);
-            buttonEditNewAddImage.TabIndex = 1;
-            buttonEditNewAddImage.Text = "Add Image";
-            buttonEditNewAddImage.UseVisualStyleBackColor = true;
-            buttonEditNewAddImage.Click += buttonEditNewAddImage_Click;
-            // 
-            // buttonEditNewRemoveImage
-            // 
-            buttonEditNewRemoveImage.AutoSize = true;
-            buttonEditNewRemoveImage.Dock = DockStyle.Top;
-            buttonEditNewRemoveImage.Enabled = false;
-            buttonEditNewRemoveImage.Location = new Point(2766, 126);
-            buttonEditNewRemoveImage.Margin = new Padding(10, 6, 10, 6);
-            buttonEditNewRemoveImage.Name = "buttonEditNewRemoveImage";
-            buttonEditNewRemoveImage.Padding = new Padding(5, 0, 5, 0);
-            buttonEditNewRemoveImage.Size = new Size(202, 42);
-            buttonEditNewRemoveImage.TabIndex = 0;
-            buttonEditNewRemoveImage.TabStop = false;
-            buttonEditNewRemoveImage.Text = "Delete Selected";
-            buttonEditNewRemoveImage.UseVisualStyleBackColor = true;
-            buttonEditNewRemoveImage.Click += buttonEditNewRemoveImage_Click;
-            // 
             // listViewEditNewImages
             // 
             listViewEditNewImages.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -531,9 +520,9 @@ namespace PrImage
             listViewEditNewImages.FullRowSelect = true;
             listViewEditNewImages.GridLines = true;
             listViewEditNewImages.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            listViewEditNewImages.Location = new Point(203, 123);
+            listViewEditNewImages.Location = new Point(253, 123);
             listViewEditNewImages.Name = "listViewEditNewImages";
-            listViewEditNewImages.Size = new Size(2550, 1141);
+            listViewEditNewImages.Size = new Size(1272, 909);
             listViewEditNewImages.TabIndex = 7;
             listViewEditNewImages.TabStop = false;
             listViewEditNewImages.UseCompatibleStateImageBehavior = false;
@@ -549,7 +538,7 @@ namespace PrImage
             // 
             buttonEditNewCreate.Dock = DockStyle.Fill;
             buttonEditNewCreate.Enabled = false;
-            buttonEditNewCreate.Location = new Point(2766, 6);
+            buttonEditNewCreate.Location = new Point(1538, 6);
             buttonEditNewCreate.Margin = new Padding(10, 6, 10, 6);
             buttonEditNewCreate.Name = "buttonEditNewCreate";
             buttonEditNewCreate.Padding = new Padding(5, 0, 5, 0);
@@ -559,13 +548,82 @@ namespace PrImage
             buttonEditNewCreate.UseVisualStyleBackColor = true;
             buttonEditNewCreate.Click += buttonEditNewCreate_Click;
             // 
+            // buttonEditNewRemoveImage
+            // 
+            buttonEditNewRemoveImage.AutoSize = true;
+            buttonEditNewRemoveImage.Dock = DockStyle.Top;
+            buttonEditNewRemoveImage.Enabled = false;
+            buttonEditNewRemoveImage.Location = new Point(1538, 126);
+            buttonEditNewRemoveImage.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewRemoveImage.Name = "buttonEditNewRemoveImage";
+            buttonEditNewRemoveImage.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewRemoveImage.Size = new Size(202, 42);
+            buttonEditNewRemoveImage.TabIndex = 0;
+            buttonEditNewRemoveImage.TabStop = false;
+            buttonEditNewRemoveImage.Text = "Delete Selected";
+            buttonEditNewRemoveImage.UseVisualStyleBackColor = true;
+            buttonEditNewRemoveImage.Click += buttonEditNewRemoveImage_Click;
+            // 
+            // tableLayoutPanelEditNewLeftControll
+            // 
+            tableLayoutPanelEditNewLeftControll.ColumnCount = 1;
+            tableLayoutPanelEditNewLeftControll.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditNewLeftControll.Controls.Add(buttonEditNewAddImage, 0, 0);
+            tableLayoutPanelEditNewLeftControll.Controls.Add(textBoxEditNewTags, 0, 2);
+            tableLayoutPanelEditNewLeftControll.Controls.Add(labelEditNewTags, 0, 1);
+            tableLayoutPanelEditNewLeftControll.Dock = DockStyle.Fill;
+            tableLayoutPanelEditNewLeftControll.Location = new Point(3, 123);
+            tableLayoutPanelEditNewLeftControll.Name = "tableLayoutPanelEditNewLeftControll";
+            tableLayoutPanelEditNewLeftControll.RowCount = 3;
+            tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditNewLeftControll.Size = new Size(244, 909);
+            tableLayoutPanelEditNewLeftControll.TabIndex = 8;
+            // 
+            // buttonEditNewAddImage
+            // 
+            buttonEditNewAddImage.AutoSize = true;
+            buttonEditNewAddImage.Dock = DockStyle.Top;
+            buttonEditNewAddImage.Location = new Point(10, 6);
+            buttonEditNewAddImage.Margin = new Padding(10, 6, 10, 6);
+            buttonEditNewAddImage.Name = "buttonEditNewAddImage";
+            buttonEditNewAddImage.Padding = new Padding(5, 0, 5, 0);
+            buttonEditNewAddImage.Size = new Size(224, 42);
+            buttonEditNewAddImage.TabIndex = 2;
+            buttonEditNewAddImage.Text = "Add Image";
+            buttonEditNewAddImage.UseVisualStyleBackColor = true;
+            buttonEditNewAddImage.Click += buttonEditNewAddImage_Click;
+            // 
+            // textBoxEditNewTags
+            // 
+            textBoxEditNewTags.AcceptsReturn = true;
+            textBoxEditNewTags.Dock = DockStyle.Fill;
+            textBoxEditNewTags.Location = new Point(3, 89);
+            textBoxEditNewTags.Multiline = true;
+            textBoxEditNewTags.Name = "textBoxEditNewTags";
+            textBoxEditNewTags.Size = new Size(238, 817);
+            textBoxEditNewTags.TabIndex = 3;
+            // 
+            // labelEditNewTags
+            // 
+            labelEditNewTags.AutoSize = true;
+            labelEditNewTags.Dock = DockStyle.Fill;
+            labelEditNewTags.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelEditNewTags.Location = new Point(3, 54);
+            labelEditNewTags.Name = "labelEditNewTags";
+            labelEditNewTags.Size = new Size(238, 32);
+            labelEditNewTags.TabIndex = 4;
+            labelEditNewTags.Text = "Tags (one per line):";
+            labelEditNewTags.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // tabPageEditExport
             // 
             tabPageEditExport.Controls.Add(tableLayoutPanelEditExport);
             tabPageEditExport.Location = new Point(4, 34);
             tabPageEditExport.Name = "tabPageEditExport";
             tabPageEditExport.Padding = new Padding(3);
-            tabPageEditExport.Size = new Size(2984, 1276);
+            tabPageEditExport.Size = new Size(1756, 1044);
             tabPageEditExport.TabIndex = 1;
             tabPageEditExport.Text = "Export";
             tabPageEditExport.UseVisualStyleBackColor = true;
@@ -582,7 +640,7 @@ namespace PrImage
             tableLayoutPanelEditExport.RowCount = 2;
             tableLayoutPanelEditExport.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelEditExport.RowStyles.Add(new RowStyle());
-            tableLayoutPanelEditExport.Size = new Size(2978, 1270);
+            tableLayoutPanelEditExport.Size = new Size(1750, 1038);
             tableLayoutPanelEditExport.TabIndex = 0;
             // 
             // buttonEditExport
@@ -591,11 +649,11 @@ namespace PrImage
             buttonEditExport.AutoSize = true;
             buttonEditExport.Enabled = false;
             buttonEditExport.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
-            buttonEditExport.Location = new Point(10, 1222);
+            buttonEditExport.Location = new Point(10, 990);
             buttonEditExport.Margin = new Padding(10, 6, 10, 6);
             buttonEditExport.Name = "buttonEditExport";
             buttonEditExport.Padding = new Padding(5, 0, 5, 0);
-            buttonEditExport.Size = new Size(2958, 42);
+            buttonEditExport.Size = new Size(1730, 42);
             buttonEditExport.TabIndex = 0;
             buttonEditExport.Text = "Export";
             buttonEditExport.UseVisualStyleBackColor = true;
@@ -609,7 +667,7 @@ namespace PrImage
             listViewEditExport.Location = new Point(3, 3);
             listViewEditExport.MultiSelect = false;
             listViewEditExport.Name = "listViewEditExport";
-            listViewEditExport.Size = new Size(2972, 1210);
+            listViewEditExport.Size = new Size(1744, 978);
             listViewEditExport.Sorting = SortOrder.Ascending;
             listViewEditExport.TabIndex = 1;
             listViewEditExport.UseCompatibleStateImageBehavior = false;
@@ -631,10 +689,11 @@ namespace PrImage
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(3000, 1352);
+            ClientSize = new Size(1772, 1123);
             Controls.Add(tabControlMain);
             Font = new Font("Segoe UI", 10F);
             Margin = new Padding(4);
+            MinimumSize = new Size(1400, 1000);
             Name = "FormMain";
             ShowIcon = false;
             Text = "PrivMage";
@@ -658,6 +717,8 @@ namespace PrImage
             tabPageEditNew.ResumeLayout(false);
             tableLayoutPanelEditNew.ResumeLayout(false);
             tableLayoutPanelEditNew.PerformLayout();
+            tableLayoutPanelEditNewLeftControll.ResumeLayout(false);
+            tableLayoutPanelEditNewLeftControll.PerformLayout();
             tabPageEditExport.ResumeLayout(false);
             tableLayoutPanelEditExport.ResumeLayout(false);
             tableLayoutPanelEditExport.PerformLayout();
@@ -694,12 +755,9 @@ namespace PrImage
         private System.Windows.Forms.TabPage tabPageEditNew;
         private System.Windows.Forms.TabPage tabPageEditExport;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEditNew;
-        private System.Windows.Forms.Label labelEditNewTitle;
-        private System.Windows.Forms.Label labelEditNewCover;
         private System.Windows.Forms.TextBox textBoxEditNewTitle;
         private System.Windows.Forms.TextBox textBoxEditNewCoverPath;
         private System.Windows.Forms.Button buttonEditNewCover;
-        private System.Windows.Forms.Button buttonEditNewAddImage;
         private System.Windows.Forms.Button buttonEditNewRemoveImage;
         private System.Windows.Forms.ListView listViewEditNewImages;
         private System.Windows.Forms.Button buttonEditNewCreate;
@@ -708,6 +766,13 @@ namespace PrImage
         private System.Windows.Forms.Button buttonEditExport;
         private System.Windows.Forms.ListView listViewEditExport;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private Label labelSelectInfoID;
+        private Label labelEditNewTitle;
+        private Label labelEditNewCover;
+        private TableLayoutPanel tableLayoutPanelEditNewLeftControll;
+        private Button buttonEditNewAddImage;
+        private TextBox textBoxEditNewTags;
+        private Label labelEditNewTags;
     }
 }
 

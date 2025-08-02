@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PrImage.JsonBlueprints;
+using PrivMage.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,11 +28,23 @@ namespace PrImage
                     labelSelectInfoName.Text = $"Title: {content.Name}";
                     labelSelectInfoDate.Text = $"Created: {content.DateCreated}({content.DateModified})";
                     labelSelectInfoTags.Text = $"Tags: {string.Join(", ", content.Tags)}";
-
+                    labelSelectInfoID.Text = $"ID: {content.Id}";
 
                     using (var ms = new System.IO.MemoryStream(content.Data))
                     {
                         pictureBoxSelectPreview.Image = System.Drawing.Image.FromStream(ms);
+                    }
+                    try
+                    {
+                        using (var ms = new MemoryStream(content.Data))
+                        {
+                            pictureBoxSelectPreview.Image = System.Drawing.Image.FromStream(ms);
+                        }
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Debug.WriteLine($"Ungültige Bilddaten für {content.Name}: {ex.Message}");
+                        pictureBoxSelectPreview.Image = Resources.fileError;
                     }
                 }
             }

@@ -32,6 +32,7 @@ namespace PrImage
             }
             
         }
+        // WEBP NOT SUPPORTED YET
         public static string ComputeMD5Hash(byte[] input)
         {
             using (MD5 md5 = MD5.Create())

@@ -1,6 +1,7 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using Newtonsoft.Json;
 using PrImage.JsonBlueprints;
+using PrivMage.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,7 +97,9 @@ namespace PrImage
 
                     // Load cover images from library contents
                     ImageList imageList = new ImageList();
-                    imageList.ImageSize = new Size(384, 384);
+                    int imageSize = Math.Min(listViewSelect.ClientSize.Width / 3, listViewSelect.ClientSize.Width / 3);
+                    Debug.WriteLine($"Setting image size for ListView Items to: {imageSize}");
+                    imageList.ImageSize = new Size(imageSize, imageSize);
                     listViewSelect.LargeImageList = imageList;
                     listViewSelect.SelectedIndexChanged += OnListViewSelectedIndexChanged;
 
@@ -109,14 +112,15 @@ namespace PrImage
                             {
                                 using (var ms = new MemoryStream(content.Data))
                                 {
-                                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-                                    imageList.Images.Add(content.Name, img);
+                                    imageList.Images.Add(content.Name, System.Drawing.Image.FromStream(ms));
                                     LibraryContentsDictionary[content.Name] = content;
                                 }
                             }
                             catch (ArgumentException ex)
                             {
                                 Debug.WriteLine($"Ungültige Bilddaten für {content.Name}: {ex.Message}");
+                                imageList.Images.Add(content.Name, Resources.fileError);
+                                LibraryContentsDictionary[content.Name] = content;
                             }
                         }
 
@@ -209,7 +213,5 @@ namespace PrImage
                 return null;
             }
         }
-
-
     }
 }
