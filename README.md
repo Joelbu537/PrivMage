@@ -20,10 +20,10 @@ All Data is stored in multiple JSON Files that are encrypted with AES256 using y
 Album data is collectively stored in a single library file, whereas the contents of each album are stored in a seperate file with a random id.
 
 **Folder Structure:**
-PrivMage/
-├── PrivMage.exe  The application
-├── lib           The library file
-├── 743820156     Album
-├── 1384291207    Album
-├── 1952740528    Album
-└── 2031508933    Album
+PrivMage/  
+├── PrivMage.exe  The application  
+├── lib           The library file  
+├── 743820156     Album  
+├── 1384291207    Album  
+├── 1952740528    Album  
+└── 2031508933    Album  
