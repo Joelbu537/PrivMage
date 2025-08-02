@@ -13,8 +13,7 @@ Planned formats:
 - Browse your albums, and view the images inside of them.
 - Export images from your albums to ordinary files.
 > [!NOTE]
-> Data leak included free of charge!
-
+> Data leak included free of charge! Not really a "leak", however the RAM still gets bloated for whatever reasons.
 
 ## Encryption
 All Data is stored in multiple JSON Files that are encrypted with AES256 using your password and a locally stored salt to prevent raindow table attacks.
