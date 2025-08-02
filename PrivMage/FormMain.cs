@@ -49,6 +49,7 @@ namespace PrImage
         public FormMain()
         {
             InitializeComponent();
+            tabControlMain.SelectedIndexChanged += tabControlMain_SelectedIndexChanged;
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(FormMain_KeyDown);
 
@@ -56,15 +57,20 @@ namespace PrImage
             listViewEditNewImages.Columns[0].Width = listViewEditNewImages.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
             listViewEditExport.Columns[0].Width = listViewEditExport.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
 
+            Debug.WriteLine($"Base loaded! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
+            StartMemoryWatcher();
+
             // Initialize Library
             if (File.Exists("lib"))
             {
                 Debug.WriteLine("Library file found. Attempting to load.");
                 PrImage.JsonBlueprints.LibraryFile library = JsonConvert.DeserializeObject<LibraryFile>(File.ReadAllText("lib"));
+                Debug.WriteLine($"Library serialized! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
                 if (library.MD5 != "")
                 {
                     Debug.WriteLine("Library file is not empty. Attempting to decrypt.");
                     salt = library.Salt;
+                    GC.Collect();
                     // Decrypt Library
                     using (FormPassword formPassword = new FormPassword(library.Salt))
                     {
@@ -93,7 +99,10 @@ namespace PrImage
                         }
                     }
 
+                    library = null;
+                    GC.Collect();
                     Debug.WriteLine("Library file loaded successfully.");
+                    Debug.WriteLine($"Library decrypted! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
 
                     // Load cover images from library contents
                     ImageList imageList = new ImageList();
@@ -137,6 +146,7 @@ namespace PrImage
                             Tag = content
                         });
                     }
+                    Debug.WriteLine($"Library displayed! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
                 }
                 else
                 {
@@ -197,21 +207,43 @@ namespace PrImage
         }
         public List<JsonBlueprints.Image> GetImageList(int id)
         {
-            string fileContent = System.IO.File.ReadAllText(id.ToString());
-            ImageCollection imageCollection = JsonConvert.DeserializeObject<ImageCollection>(fileContent);
-            string decrypted = DecryptBase64ToString(imageCollection.Content, key, iv);
-            List<JsonBlueprints.Image> images = Newtonsoft.Json.JsonConvert.DeserializeObject<List<JsonBlueprints.Image>>(decrypted);
-            if (imageCollection.MD5 == Program.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(decrypted)))
+            try
             {
-                Debug.WriteLine("MD5 hash matches, proceeding with image loading.");
-                return images;
+                string fileContent = System.IO.File.ReadAllText(id.ToString());
+                ImageCollection imageCollection = JsonConvert.DeserializeObject<ImageCollection>(fileContent);
+                string decrypted = DecryptBase64ToString(imageCollection.Content, key, iv);
+                List<JsonBlueprints.Image> images = Newtonsoft.Json.JsonConvert.DeserializeObject<List<JsonBlueprints.Image>>(decrypted);
+                if (imageCollection.MD5 == Program.ComputeMD5Hash(System.Text.Encoding.UTF8.GetBytes(decrypted)))
+                {
+                    Debug.WriteLine("MD5 hash matches, proceeding with image loading.");
+                    return images;
+                }
+                else
+                {
+                    Debug.WriteLine("MD5 hash does not match, aborting image loading.");
+                    MessageBox.Show("The content is corrupted or has been tampered with.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
             }
-            else
+            catch
             {
-                Debug.WriteLine("MD5 hash does not match, aborting image loading.");
-                MessageBox.Show("The content is corrupted or has been tampered with.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+            
+        }
+        private void CheckMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            ImageTracker.Report();
+        }
+        private System.Windows.Forms.Timer memoryCheckTimer;
+        private void StartMemoryWatcher()
+        {
+            memoryCheckTimer = new System.Windows.Forms.Timer();
+            memoryCheckTimer.Interval = 5000; // alle 5 Sekunden
+            memoryCheckTimer.Tick += (s, e) => CheckMemory();
+            memoryCheckTimer.Start();
         }
     }
 }

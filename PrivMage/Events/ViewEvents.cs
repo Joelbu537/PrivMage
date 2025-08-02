@@ -20,28 +20,20 @@ namespace PrImage
         private void checkBoxViewOrignianResolution_CheckedChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("Original resolution checkbox changed. Checked: " + checkBoxViewOrignianResolution.Checked);
-            if (checkBoxViewOrignianResolution.Checked)
-            {
-                pictureBoxView.SizeMode = PictureBoxSizeMode.CenterImage;
-            }
-            else
-            {
-                pictureBoxView.SizeMode = PictureBoxSizeMode.Zoom;
-            }
+            pictureBoxView.SizeMode = checkBoxViewOrignianResolution.Checked
+                ? PictureBoxSizeMode.CenterImage
+                : PictureBoxSizeMode.Zoom;
         }
         private void textBoxViewCurrentImage_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxViewCurrentImage.Text))
-            {
-                return;
-            }
+            if (string.IsNullOrWhiteSpace(textBoxViewCurrentImage.Text)) return;
+
             try
             {
                 int index = int.Parse(textBoxViewCurrentImage.Text);
                 if (index < 1 || index > Images.Count)
-                {
                     throw new ArgumentOutOfRangeException("Index out of range");
-                }
+
                 CurrentViewImageIndex = index;
             }
             catch
@@ -52,36 +44,48 @@ namespace PrImage
         private void OnCurrentImageIndexChanged(int index)
         {
             Debug.WriteLine("Current image index changed to: " + index);
+
             try
             {
-                using (var ms = new System.IO.MemoryStream(Images[index - 1]))
+                // Altes Bild freigeben
+                if (pictureBoxView.Image != null)
                 {
-                    pictureBoxView.Image = System.Drawing.Image.FromStream(ms);
-                    if(pictureBoxView.Image.Size.Width > pictureBoxView.ClientSize.Width || pictureBoxView.Image.Size.Height > pictureBoxView.ClientSize.Height)
-                    {
-                        pictureBoxView.SizeMode = PictureBoxSizeMode.Zoom;
-                    }
-                    else if (checkBoxViewOrignianResolution.Checked)
-                    {
-                        pictureBoxView.SizeMode = PictureBoxSizeMode.CenterImage;
-                    }
-                    else
-                    {
-                        pictureBoxView.SizeMode = PictureBoxSizeMode.Zoom;
-                    }
+                    pictureBoxView.Image.Dispose();
+                    pictureBoxView.Image = null;
                 }
+
+                using (var ms = new MemoryStream(Images[index - 1]))
+                using (var img = Image.FromStream(ms))
+                {
+                    pictureBoxView.Image = (Image)img.Clone();
+                    ImageTracker.Track(pictureBoxView.Image);
+                }
+
+                pictureBoxView.SizeMode = (pictureBoxView.Image.Width > pictureBoxView.ClientSize.Width ||
+                                           pictureBoxView.Image.Height > pictureBoxView.ClientSize.Height)
+                                           ? PictureBoxSizeMode.Zoom
+                                           : checkBoxViewOrignianResolution.Checked
+                                             ? PictureBoxSizeMode.CenterImage
+                                             : PictureBoxSizeMode.Zoom;
+
                 textBoxViewCurrentImage.Text = index.ToString();
-                tableLayoutPanelViewControll.BackColor = System.Drawing.Color.White;
-                tabPageView.BackColor = System.Drawing.Color.White;
+                tableLayoutPanelViewControll.BackColor = Color.White;
+                tabPageView.BackColor = Color.White;
             }
             catch
             {
+                if (pictureBoxView.Image != null)
+                {
+                    pictureBoxView.Image.Dispose();
+                    pictureBoxView.Image = null;
+                }
+
                 pictureBoxView.Image = pictureBoxView.ErrorImage;
-                tableLayoutPanelViewControll.BackColor = System.Drawing.Color.Red;
-                tabPageView.BackColor = System.Drawing.Color.Red;
+                ImageTracker.Track(pictureBoxView.Image);
+                tableLayoutPanelViewControll.BackColor = Color.Red;
+                tabPageView.BackColor = Color.Red;
                 textBoxViewCurrentImage.Text = index.ToString();
             }
-
         }
         private void buttonViewPrevious_Click(object sender, EventArgs e)
         {
@@ -91,6 +95,17 @@ namespace PrImage
         private void buttonViewNext_Click(object sender, EventArgs e)
         {
             CurrentViewImageIndex++;
+        }
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlMain.SelectedTab != tabPageView)
+            {
+                if (pictureBoxView.Image != null)
+                {
+                    pictureBoxView.Image.Dispose();
+                    pictureBoxView.Image = null;
+                }
+            }
         }
     }
 }

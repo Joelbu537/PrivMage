@@ -255,10 +255,10 @@ namespace PrImage
             // tabPageView
             // 
             tabPageView.Controls.Add(tableLayoutPanelView);
-            tabPageView.Location = new Point(4, 34);
+            tabPageView.Location = new Point(4, 37);
             tabPageView.Name = "tabPageView";
             tabPageView.Padding = new Padding(3);
-            tabPageView.Size = new Size(1764, 1085);
+            tabPageView.Size = new Size(1764, 1082);
             tabPageView.TabIndex = 1;
             tabPageView.Text = "View";
             tabPageView.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@ namespace PrImage
             tableLayoutPanelView.RowCount = 2;
             tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelView.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanelView.Size = new Size(1758, 1079);
+            tableLayoutPanelView.Size = new Size(1758, 1076);
             tableLayoutPanelView.TabIndex = 1;
             // 
             // tableLayoutPanelViewControll
@@ -295,7 +295,7 @@ namespace PrImage
             tableLayoutPanelViewControll.Controls.Add(checkBoxViewOrignianResolution, 4, 0);
             tableLayoutPanelViewControll.Dock = DockStyle.Fill;
             tableLayoutPanelViewControll.Font = new Font("Segoe UI", 12F);
-            tableLayoutPanelViewControll.Location = new Point(0, 1029);
+            tableLayoutPanelViewControll.Location = new Point(0, 1026);
             tableLayoutPanelViewControll.Margin = new Padding(0);
             tableLayoutPanelViewControll.Name = "tableLayoutPanelViewControll";
             tableLayoutPanelViewControll.RowCount = 1;
@@ -309,7 +309,7 @@ namespace PrImage
             buttonViewPrevious.Dock = DockStyle.Fill;
             buttonViewPrevious.Enabled = false;
             buttonViewPrevious.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonViewPrevious.Location = new Point(720, 3);
+            buttonViewPrevious.Location = new Point(707, 3);
             buttonViewPrevious.MinimumSize = new Size(100, 40);
             buttonViewPrevious.Name = "buttonViewPrevious";
             buttonViewPrevious.Size = new Size(123, 44);
@@ -325,7 +325,7 @@ namespace PrImage
             buttonViewNext.Dock = DockStyle.Fill;
             buttonViewNext.Enabled = false;
             buttonViewNext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonViewNext.Location = new Point(938, 3);
+            buttonViewNext.Location = new Point(950, 3);
             buttonViewNext.MinimumSize = new Size(100, 40);
             buttonViewNext.Name = "buttonViewNext";
             buttonViewNext.Size = new Size(100, 44);
@@ -341,9 +341,9 @@ namespace PrImage
             flowLayoutPanelViewControll.Controls.Add(textBoxViewCurrentImage);
             flowLayoutPanelViewControll.Controls.Add(labelViewMaxImages);
             flowLayoutPanelViewControll.Dock = DockStyle.Fill;
-            flowLayoutPanelViewControll.Location = new Point(849, 3);
+            flowLayoutPanelViewControll.Location = new Point(836, 3);
             flowLayoutPanelViewControll.Name = "flowLayoutPanelViewControll";
-            flowLayoutPanelViewControll.Size = new Size(83, 44);
+            flowLayoutPanelViewControll.Size = new Size(108, 44);
             flowLayoutPanelViewControll.TabIndex = 3;
             flowLayoutPanelViewControll.WrapContents = false;
             // 
@@ -353,17 +353,18 @@ namespace PrImage
             textBoxViewCurrentImage.Location = new Point(3, 3);
             textBoxViewCurrentImage.MinimumSize = new Size(35, 4);
             textBoxViewCurrentImage.Name = "textBoxViewCurrentImage";
-            textBoxViewCurrentImage.Size = new Size(35, 39);
+            textBoxViewCurrentImage.Size = new Size(60, 39);
             textBoxViewCurrentImage.TabIndex = 0;
             textBoxViewCurrentImage.TabStop = false;
             textBoxViewCurrentImage.Text = "1";
+            textBoxViewCurrentImage.TextAlign = HorizontalAlignment.Right;
             textBoxViewCurrentImage.TextChanged += textBoxViewCurrentImage_TextChanged;
             // 
             // labelViewMaxImages
             // 
             labelViewMaxImages.AutoSize = true;
             labelViewMaxImages.Dock = DockStyle.Fill;
-            labelViewMaxImages.Location = new Point(44, 0);
+            labelViewMaxImages.Location = new Point(69, 0);
             labelViewMaxImages.MinimumSize = new Size(35, 0);
             labelViewMaxImages.Name = "labelViewMaxImages";
             labelViewMaxImages.Size = new Size(36, 32);
@@ -395,7 +396,7 @@ namespace PrImage
             pictureBoxView.Location = new Point(0, 0);
             pictureBoxView.Margin = new Padding(0);
             pictureBoxView.Name = "pictureBoxView";
-            pictureBoxView.Size = new Size(1758, 1029);
+            pictureBoxView.Size = new Size(1758, 1026);
             pictureBoxView.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBoxView.TabIndex = 2;
             pictureBoxView.TabStop = false;
@@ -403,9 +404,9 @@ namespace PrImage
             // tabPageEdit
             // 
             tabPageEdit.Controls.Add(tabControlEdit);
-            tabPageEdit.Location = new Point(4, 37);
+            tabPageEdit.Location = new Point(4, 34);
             tabPageEdit.Name = "tabPageEdit";
-            tabPageEdit.Size = new Size(1764, 1082);
+            tabPageEdit.Size = new Size(1764, 1085);
             tabPageEdit.TabIndex = 2;
             tabPageEdit.Text = "Edit";
             tabPageEdit.UseVisualStyleBackColor = true;
@@ -418,7 +419,7 @@ namespace PrImage
             tabControlEdit.Location = new Point(0, 0);
             tabControlEdit.Name = "tabControlEdit";
             tabControlEdit.SelectedIndex = 0;
-            tabControlEdit.Size = new Size(1764, 1082);
+            tabControlEdit.Size = new Size(1764, 1085);
             tabControlEdit.TabIndex = 0;
             // 
             // tabPageEditNew
@@ -428,7 +429,7 @@ namespace PrImage
             tabPageEditNew.Location = new Point(4, 37);
             tabPageEditNew.Name = "tabPageEditNew";
             tabPageEditNew.Padding = new Padding(3);
-            tabPageEditNew.Size = new Size(1756, 1041);
+            tabPageEditNew.Size = new Size(1756, 1044);
             tabPageEditNew.TabIndex = 0;
             tabPageEditNew.Text = "Create New";
             tabPageEditNew.UseVisualStyleBackColor = true;
@@ -455,7 +456,7 @@ namespace PrImage
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelEditNew.Size = new Size(1750, 1035);
+            tableLayoutPanelEditNew.Size = new Size(1750, 1038);
             tableLayoutPanelEditNew.TabIndex = 0;
             // 
             // labelEditNewTitle
@@ -522,7 +523,7 @@ namespace PrImage
             listViewEditNewImages.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             listViewEditNewImages.Location = new Point(253, 123);
             listViewEditNewImages.Name = "listViewEditNewImages";
-            listViewEditNewImages.Size = new Size(1272, 909);
+            listViewEditNewImages.Size = new Size(1272, 912);
             listViewEditNewImages.TabIndex = 7;
             listViewEditNewImages.TabStop = false;
             listViewEditNewImages.UseCompatibleStateImageBehavior = false;
@@ -578,7 +579,7 @@ namespace PrImage
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelEditNewLeftControll.Size = new Size(244, 909);
+            tableLayoutPanelEditNewLeftControll.Size = new Size(244, 912);
             tableLayoutPanelEditNewLeftControll.TabIndex = 8;
             // 
             // buttonEditNewAddImage
@@ -603,7 +604,7 @@ namespace PrImage
             textBoxEditNewTags.Location = new Point(3, 89);
             textBoxEditNewTags.Multiline = true;
             textBoxEditNewTags.Name = "textBoxEditNewTags";
-            textBoxEditNewTags.Size = new Size(238, 817);
+            textBoxEditNewTags.Size = new Size(238, 820);
             textBoxEditNewTags.TabIndex = 3;
             // 
             // labelEditNewTags
