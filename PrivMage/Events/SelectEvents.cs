@@ -29,16 +29,6 @@ namespace PrImage
                     labelSelectInfoDate.Text = $"Created: {content.DateCreated}({content.DateModified})";
                     labelSelectInfoTags.Text = $"Tags: {string.Join(", ", content.Tags)}";
                     labelSelectInfoID.Text = $"ID: {content.Id}";
-
-                    using (var ms = new System.IO.MemoryStream(content.Data))
-                    {
-                        if (pictureBoxSelectPreview.Image != null)
-                        {
-                            pictureBoxSelectPreview.Image.Dispose();
-                        }
-                        pictureBoxSelectPreview.Image = System.Drawing.Image.FromStream(ms);
-                        ImageTracker.Track(pictureBoxSelectPreview.Image);
-                    }
                     try
                     {
                         using (var ms = new MemoryStream(content.Data))

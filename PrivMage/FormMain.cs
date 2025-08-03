@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PrImage
 {
     public partial class FormMain : Form
@@ -52,10 +53,6 @@ namespace PrImage
             tabControlMain.SelectedIndexChanged += tabControlMain_SelectedIndexChanged;
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(FormMain_KeyDown);
-
-            // Listview-Scaling
-            listViewEditNewImages.Columns[0].Width = listViewEditNewImages.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
-            listViewEditExport.Columns[0].Width = listViewEditExport.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
 
             Debug.WriteLine($"Base loaded! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
             StartMemoryWatcher();
@@ -106,9 +103,7 @@ namespace PrImage
 
                     // Load cover images from library contents
                     ImageList imageList = new ImageList();
-                    int imageSize = Math.Min(listViewSelect.ClientSize.Width / 3, listViewSelect.ClientSize.Width / 3);
-                    Debug.WriteLine($"Setting image size for ListView Items to: {imageSize}");
-                    imageList.ImageSize = new Size(imageSize, imageSize);
+                    imageList.ImageSize = new Size(384, 384);
                     listViewSelect.LargeImageList = imageList;
                     listViewSelect.SelectedIndexChanged += OnListViewSelectedIndexChanged;
 
@@ -159,6 +154,14 @@ namespace PrImage
                 Debug.WriteLine("Library file empty. Creating a new one.");
                 CreateNewLibrary();
             }
+
+        }
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            // Listview-Scaling
+            listViewEditNewImages.Columns[0].Width = listViewEditNewImages.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
+            listViewEditExport.Columns[0].Width = listViewEditExport.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
+            splitContainerSelect.SplitterDistance = splitContainerSelect.Width - splitContainerSelect.Panel2MinSize;
         }
         public void CorrectButtonStates()
         {
@@ -229,7 +232,7 @@ namespace PrImage
             {
                 return null;
             }
-            
+
         }
         private void CheckMemory()
         {
