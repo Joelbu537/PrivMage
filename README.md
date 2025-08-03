@@ -6,7 +6,7 @@ This application allows you to encrypt and view images. Currently supported form
 
 Planned formats:
 - GIF
-- WEBP
+- WEBP (Automatic conversion to jpeg)
 
 ## Features
 - Create image albums with a title, cover image, tags and images contained within it.
@@ -14,6 +14,12 @@ Planned formats:
 - Export images from your albums to ordinary files.
 > [!NOTE]
 > Data leak included free of charge! Not really a "leak", however the RAM still gets bloated for whatever reasons.
+
+## Planned Features
+- Deleting and editing albums
+- Sorting the Items in Select
+- Custom preferences (Like default directory)
+- File Size info
 
 ## Encryption
 All Data is stored in multiple JSON Files that are encrypted with AES256 using your password and a locally stored salt to prevent raindow table attacks.
