@@ -75,7 +75,17 @@ namespace PrImage
             buttonEditExport = new Button();
             listViewEditExport = new ListView();
             columnHeaderName = new ColumnHeader();
+            tabPageModify = new TabPage();
+            tableLayoutPanelEditModify = new TableLayoutPanel();
+            tableLayoutPanelEditModifyControll = new TableLayoutPanel();
+            buttonEditModifyAttach = new Button();
+            buttonEditModifyRemove = new Button();
+            buttonEditModifyInsert = new Button();
+            buttonEditModifySelect = new Button();
+            listViewEditModify = new ListView();
+            columnHeaderModifyName = new ColumnHeader();
             imageList1 = new ImageList(components);
+            buttonEditModifyConfirm = new Button();
             tabControlMain.SuspendLayout();
             tabPageSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerSelect).BeginInit();
@@ -97,6 +107,9 @@ namespace PrImage
             tableLayoutPanelEditNewLeftControll.SuspendLayout();
             tabPageEditExport.SuspendLayout();
             tableLayoutPanelEditExport.SuspendLayout();
+            tabPageModify.SuspendLayout();
+            tableLayoutPanelEditModify.SuspendLayout();
+            tableLayoutPanelEditModifyControll.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlMain
@@ -246,7 +259,7 @@ namespace PrImage
             buttonSelectRead.TabIndex = 0;
             buttonSelectRead.Text = "Read";
             buttonSelectRead.UseVisualStyleBackColor = true;
-            buttonSelectRead.Click += this.buttonSelectRead_Click;
+            buttonSelectRead.Click += buttonSelectRead_Click;
             // 
             // labelSelectInfoID
             // 
@@ -411,9 +424,9 @@ namespace PrImage
             // tabPageEdit
             // 
             tabPageEdit.Controls.Add(tabControlEdit);
-            tabPageEdit.Location = new Point(4, 34);
+            tabPageEdit.Location = new Point(4, 37);
             tabPageEdit.Name = "tabPageEdit";
-            tabPageEdit.Size = new Size(1770, 1106);
+            tabPageEdit.Size = new Size(1770, 1103);
             tabPageEdit.TabIndex = 2;
             tabPageEdit.Text = "Edit";
             tabPageEdit.UseVisualStyleBackColor = true;
@@ -422,11 +435,12 @@ namespace PrImage
             // 
             tabControlEdit.Controls.Add(tabPageEditNew);
             tabControlEdit.Controls.Add(tabPageEditExport);
+            tabControlEdit.Controls.Add(tabPageModify);
             tabControlEdit.Dock = DockStyle.Fill;
             tabControlEdit.Location = new Point(0, 0);
             tabControlEdit.Name = "tabControlEdit";
             tabControlEdit.SelectedIndex = 0;
-            tabControlEdit.Size = new Size(1770, 1106);
+            tabControlEdit.Size = new Size(1770, 1103);
             tabControlEdit.TabIndex = 0;
             // 
             // tabPageEditNew
@@ -436,7 +450,7 @@ namespace PrImage
             tabPageEditNew.Location = new Point(4, 37);
             tabPageEditNew.Name = "tabPageEditNew";
             tabPageEditNew.Padding = new Padding(3);
-            tabPageEditNew.Size = new Size(1762, 1065);
+            tabPageEditNew.Size = new Size(1762, 1062);
             tabPageEditNew.TabIndex = 0;
             tabPageEditNew.Text = "Create New";
             tabPageEditNew.UseVisualStyleBackColor = true;
@@ -463,7 +477,7 @@ namespace PrImage
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableLayoutPanelEditNew.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelEditNew.Size = new Size(1756, 1059);
+            tableLayoutPanelEditNew.Size = new Size(1756, 1056);
             tableLayoutPanelEditNew.TabIndex = 0;
             // 
             // labelEditNewTitle
@@ -530,7 +544,7 @@ namespace PrImage
             listViewEditNewImages.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             listViewEditNewImages.Location = new Point(253, 123);
             listViewEditNewImages.Name = "listViewEditNewImages";
-            listViewEditNewImages.Size = new Size(1278, 933);
+            listViewEditNewImages.Size = new Size(1278, 930);
             listViewEditNewImages.TabIndex = 7;
             listViewEditNewImages.TabStop = false;
             listViewEditNewImages.UseCompatibleStateImageBehavior = false;
@@ -586,7 +600,7 @@ namespace PrImage
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditNewLeftControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelEditNewLeftControll.Size = new Size(244, 933);
+            tableLayoutPanelEditNewLeftControll.Size = new Size(244, 930);
             tableLayoutPanelEditNewLeftControll.TabIndex = 8;
             // 
             // buttonEditNewAddImage
@@ -611,7 +625,7 @@ namespace PrImage
             textBoxEditNewTags.Location = new Point(3, 89);
             textBoxEditNewTags.Multiline = true;
             textBoxEditNewTags.Name = "textBoxEditNewTags";
-            textBoxEditNewTags.Size = new Size(238, 841);
+            textBoxEditNewTags.Size = new Size(238, 838);
             textBoxEditNewTags.TabIndex = 3;
             // 
             // labelEditNewTags
@@ -632,7 +646,7 @@ namespace PrImage
             tabPageEditExport.Location = new Point(4, 34);
             tabPageEditExport.Name = "tabPageEditExport";
             tabPageEditExport.Padding = new Padding(3);
-            tabPageEditExport.Size = new Size(1762, 1068);
+            tabPageEditExport.Size = new Size(1762, 1065);
             tabPageEditExport.TabIndex = 1;
             tabPageEditExport.Text = "Export";
             tabPageEditExport.UseVisualStyleBackColor = true;
@@ -649,7 +663,7 @@ namespace PrImage
             tableLayoutPanelEditExport.RowCount = 2;
             tableLayoutPanelEditExport.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelEditExport.RowStyles.Add(new RowStyle());
-            tableLayoutPanelEditExport.Size = new Size(1756, 1062);
+            tableLayoutPanelEditExport.Size = new Size(1756, 1059);
             tableLayoutPanelEditExport.TabIndex = 0;
             // 
             // buttonEditExport
@@ -658,7 +672,7 @@ namespace PrImage
             buttonEditExport.AutoSize = true;
             buttonEditExport.Enabled = false;
             buttonEditExport.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
-            buttonEditExport.Location = new Point(10, 1014);
+            buttonEditExport.Location = new Point(10, 1011);
             buttonEditExport.Margin = new Padding(10, 6, 10, 6);
             buttonEditExport.Name = "buttonEditExport";
             buttonEditExport.Padding = new Padding(5, 0, 5, 0);
@@ -676,7 +690,7 @@ namespace PrImage
             listViewEditExport.Location = new Point(3, 3);
             listViewEditExport.MultiSelect = false;
             listViewEditExport.Name = "listViewEditExport";
-            listViewEditExport.Size = new Size(1750, 1002);
+            listViewEditExport.Size = new Size(1750, 999);
             listViewEditExport.Sorting = SortOrder.Ascending;
             listViewEditExport.TabIndex = 1;
             listViewEditExport.UseCompatibleStateImageBehavior = false;
@@ -688,11 +702,152 @@ namespace PrImage
             columnHeaderName.Text = "Name";
             columnHeaderName.Width = 9999;
             // 
+            // tabPageModify
+            // 
+            tabPageModify.Controls.Add(tableLayoutPanelEditModify);
+            tabPageModify.Location = new Point(4, 37);
+            tabPageModify.Name = "tabPageModify";
+            tabPageModify.Size = new Size(1762, 1062);
+            tabPageModify.TabIndex = 2;
+            tabPageModify.Text = "Modify";
+            tabPageModify.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelEditModify
+            // 
+            tableLayoutPanelEditModify.ColumnCount = 2;
+            tableLayoutPanelEditModify.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditModify.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 400F));
+            tableLayoutPanelEditModify.Controls.Add(tableLayoutPanelEditModifyControll, 1, 0);
+            tableLayoutPanelEditModify.Controls.Add(listViewEditModify, 0, 0);
+            tableLayoutPanelEditModify.Dock = DockStyle.Fill;
+            tableLayoutPanelEditModify.Location = new Point(0, 0);
+            tableLayoutPanelEditModify.Name = "tableLayoutPanelEditModify";
+            tableLayoutPanelEditModify.RowCount = 1;
+            tableLayoutPanelEditModify.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditModify.Size = new Size(1762, 1062);
+            tableLayoutPanelEditModify.TabIndex = 0;
+            // 
+            // tableLayoutPanelEditModifyControll
+            // 
+            tableLayoutPanelEditModifyControll.ColumnCount = 1;
+            tableLayoutPanelEditModifyControll.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyAttach, 0, 0);
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyRemove, 0, 1);
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyInsert, 0, 2);
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifySelect, 0, 3);
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyConfirm, 0, 5);
+            tableLayoutPanelEditModifyControll.Dock = DockStyle.Fill;
+            tableLayoutPanelEditModifyControll.Location = new Point(1365, 3);
+            tableLayoutPanelEditModifyControll.Name = "tableLayoutPanelEditModifyControll";
+            tableLayoutPanelEditModifyControll.RowCount = 6;
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
+            tableLayoutPanelEditModifyControll.Size = new Size(394, 1056);
+            tableLayoutPanelEditModifyControll.TabIndex = 0;
+            // 
+            // buttonEditModifyAttach
+            // 
+            buttonEditModifyAttach.AutoSize = true;
+            buttonEditModifyAttach.Dock = DockStyle.Fill;
+            buttonEditModifyAttach.Enabled = false;
+            buttonEditModifyAttach.Font = new Font("Segoe UI", 12F);
+            buttonEditModifyAttach.Location = new Point(10, 6);
+            buttonEditModifyAttach.Margin = new Padding(10, 6, 10, 6);
+            buttonEditModifyAttach.Name = "buttonEditModifyAttach";
+            buttonEditModifyAttach.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifyAttach.Size = new Size(374, 48);
+            buttonEditModifyAttach.TabIndex = 0;
+            buttonEditModifyAttach.Text = "Attach";
+            buttonEditModifyAttach.UseVisualStyleBackColor = true;
+            buttonEditModifyAttach.Click += buttonEditModifyAttach_Click;
+            // 
+            // buttonEditModifyRemove
+            // 
+            buttonEditModifyRemove.AutoSize = true;
+            buttonEditModifyRemove.Dock = DockStyle.Fill;
+            buttonEditModifyRemove.Enabled = false;
+            buttonEditModifyRemove.Font = new Font("Segoe UI", 12F);
+            buttonEditModifyRemove.Location = new Point(10, 66);
+            buttonEditModifyRemove.Margin = new Padding(10, 6, 10, 6);
+            buttonEditModifyRemove.Name = "buttonEditModifyRemove";
+            buttonEditModifyRemove.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifyRemove.Size = new Size(374, 48);
+            buttonEditModifyRemove.TabIndex = 1;
+            buttonEditModifyRemove.Text = "Remove";
+            buttonEditModifyRemove.UseVisualStyleBackColor = true;
+            buttonEditModifyRemove.Click += buttonEditModifyRemove_Click;
+            // 
+            // buttonEditModifyInsert
+            // 
+            buttonEditModifyInsert.AutoSize = true;
+            buttonEditModifyInsert.Dock = DockStyle.Fill;
+            buttonEditModifyInsert.Enabled = false;
+            buttonEditModifyInsert.Font = new Font("Segoe UI", 12F);
+            buttonEditModifyInsert.Location = new Point(10, 126);
+            buttonEditModifyInsert.Margin = new Padding(10, 6, 10, 6);
+            buttonEditModifyInsert.Name = "buttonEditModifyInsert";
+            buttonEditModifyInsert.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifyInsert.Size = new Size(374, 48);
+            buttonEditModifyInsert.TabIndex = 2;
+            buttonEditModifyInsert.Text = "Insert";
+            buttonEditModifyInsert.UseVisualStyleBackColor = true;
+            buttonEditModifyInsert.Click += buttonEditModifyInsert_Click;
+            // 
+            // buttonEditModifySelect
+            // 
+            buttonEditModifySelect.AutoSize = true;
+            buttonEditModifySelect.Dock = DockStyle.Fill;
+            buttonEditModifySelect.Font = new Font("Segoe UI", 12F);
+            buttonEditModifySelect.Location = new Point(10, 186);
+            buttonEditModifySelect.Margin = new Padding(10, 6, 10, 6);
+            buttonEditModifySelect.Name = "buttonEditModifySelect";
+            buttonEditModifySelect.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifySelect.Size = new Size(374, 48);
+            buttonEditModifySelect.TabIndex = 3;
+            buttonEditModifySelect.Text = "Choose Album";
+            buttonEditModifySelect.UseVisualStyleBackColor = true;
+            buttonEditModifySelect.Click += buttonEditModifySelect_Click;
+            // 
+            // listViewEditModify
+            // 
+            listViewEditModify.Columns.AddRange(new ColumnHeader[] { columnHeaderModifyName });
+            listViewEditModify.Dock = DockStyle.Fill;
+            listViewEditModify.Location = new Point(3, 3);
+            listViewEditModify.Name = "listViewEditModify";
+            listViewEditModify.Size = new Size(1356, 1056);
+            listViewEditModify.TabIndex = 1;
+            listViewEditModify.UseCompatibleStateImageBehavior = false;
+            listViewEditModify.View = View.Details;
+            // 
+            // columnHeaderModifyName
+            // 
+            columnHeaderModifyName.Text = "Album";
+            columnHeaderModifyName.Width = 9999;
+            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
+            // 
+            // buttonEditModifyConfirm
+            // 
+            buttonEditModifyConfirm.AutoSize = true;
+            buttonEditModifyConfirm.Dock = DockStyle.Fill;
+            buttonEditModifyConfirm.Enabled = false;
+            buttonEditModifyConfirm.Font = new Font("Segoe UI", 12F);
+            buttonEditModifyConfirm.Location = new Point(10, 1002);
+            buttonEditModifyConfirm.Margin = new Padding(10, 6, 10, 6);
+            buttonEditModifyConfirm.Name = "buttonEditModifyConfirm";
+            buttonEditModifyConfirm.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifyConfirm.Size = new Size(374, 48);
+            buttonEditModifyConfirm.TabIndex = 4;
+            buttonEditModifyConfirm.Text = "Confirm";
+            buttonEditModifyConfirm.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -735,6 +890,10 @@ namespace PrImage
             tabPageEditExport.ResumeLayout(false);
             tableLayoutPanelEditExport.ResumeLayout(false);
             tableLayoutPanelEditExport.PerformLayout();
+            tabPageModify.ResumeLayout(false);
+            tableLayoutPanelEditModify.ResumeLayout(false);
+            tableLayoutPanelEditModifyControll.ResumeLayout(false);
+            tableLayoutPanelEditModifyControll.PerformLayout();
             ResumeLayout(false);
 
         }
@@ -786,6 +945,16 @@ namespace PrImage
         private Label labelSelectInfoTags;
         private Button buttonSelectRead;
         private Label labelSelectInfoID;
+        private TabPage tabPageModify;
+        private TableLayoutPanel tableLayoutPanelEditModify;
+        private TableLayoutPanel tableLayoutPanelEditModifyControll;
+        private Button buttonEditModifyAttach;
+        private Button buttonEditModifyRemove;
+        private ListView listViewEditModify;
+        private Button buttonEditModifyInsert;
+        private Button buttonEditModifySelect;
+        private ColumnHeader columnHeaderModifyName;
+        private Button buttonEditModifyConfirm;
     }
 }
 

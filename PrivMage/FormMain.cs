@@ -1,19 +1,8 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PrImage.JsonBlueprints;
 using PrivMage.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 
 namespace PrImage
@@ -118,6 +107,11 @@ namespace PrImage
                                 {
                                     imageList.Images.Add(content.Name, System.Drawing.Image.FromStream(ms));
                                     LibraryContentsDictionary[content.Name] = content;
+                                    listViewEditModify.Items.Add(new ListViewItem
+                                    {
+                                        Text = content.Name,
+                                        Tag = content
+                                    });
                                 }
                             }
                             catch (ArgumentException ex)
@@ -248,5 +242,7 @@ namespace PrImage
             memoryCheckTimer.Tick += (s, e) => CheckMemory();
             memoryCheckTimer.Start();
         }
+
+
     }
 }
