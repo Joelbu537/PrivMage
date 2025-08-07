@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PrImage.JsonBlueprints
+namespace PrivMage
 {
     public partial class FormPassword : Form
     {

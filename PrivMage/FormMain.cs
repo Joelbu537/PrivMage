@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
-using PrImage.JsonBlueprints;
+using PrivMage.JsonBlueprints;
 using PrivMage.Properties;
 using System.Diagnostics;
 using System.Text;
 
 
-namespace PrImage
+namespace PrivMage
 {
     public partial class FormMain : Form
     {
@@ -50,7 +50,7 @@ namespace PrImage
             if (File.Exists("lib"))
             {
                 Debug.WriteLine("Library file found. Attempting to load.");
-                PrImage.JsonBlueprints.LibraryFile library = JsonConvert.DeserializeObject<LibraryFile>(File.ReadAllText("lib"));
+                PrivMage.JsonBlueprints.LibraryFile library = JsonConvert.DeserializeObject<LibraryFile>(File.ReadAllText("lib"));
                 Debug.WriteLine($"Library serialized! RAM: {GC.GetTotalMemory(false) / 1024 / 1024} MB");
                 if (library.MD5 != "")
                 {
@@ -105,8 +105,10 @@ namespace PrImage
                             {
                                 using (var ms = new MemoryStream(content.Data))
                                 {
+                                    // SelectView
                                     imageList.Images.Add(content.Name, System.Drawing.Image.FromStream(ms));
                                     LibraryContentsDictionary[content.Name] = content;
+                                    // ModifyView
                                     listViewEditModify.Items.Add(new ListViewItem
                                     {
                                         Text = content.Name,
@@ -153,8 +155,6 @@ namespace PrImage
         private void FormMain_Load(object sender, EventArgs e)
         {
             // Listview-Scaling
-            listViewEditNewImages.Columns[0].Width = listViewEditNewImages.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
-            listViewEditExport.Columns[0].Width = listViewEditExport.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
             splitContainerSelect.SplitterDistance = splitContainerSelect.Width - splitContainerSelect.Panel2MinSize;
         }
         public void CorrectButtonStates()

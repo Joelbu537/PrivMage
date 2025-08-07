@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using PrImage.JsonBlueprints;
 
-namespace PrImage
+namespace PrivMage
 {
     public partial class FormMain : Form
     {

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrImage.JsonBlueprints
+namespace PrivMage.JsonBlueprints
 {
     public class ImageCollection
     {
@@ -15,5 +16,9 @@ namespace PrImage.JsonBlueprints
     {
         public required byte[] data { get; set; }
         public int id { get; set; }
+        public static List<Image> Sort()
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PrImage
+namespace PrivMage
 {
     public partial class FormMain : Form
     {
@@ -84,7 +84,7 @@ namespace PrImage
                     else
                     {
                         lastPath = Path.GetDirectoryName(image);
-                        listViewEditNewImages.Items.Add(new ListViewItem(image));
+                        listViewEditNewImages.Items.Add(image);
                     }
                 }
                 if (error)

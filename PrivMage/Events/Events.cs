@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using PrImage.JsonBlueprints;
+using PrivMage.JsonBlueprints;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PrImage
+namespace PrivMage
 {
     public partial class FormMain : Form
     {
@@ -77,8 +77,7 @@ namespace PrImage
         }
         private void FormMain_Resize(object sender, EventArgs e)
         {
-            listViewEditNewImages.Columns[0].Width = listViewEditNewImages.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
-            listViewEditExport.Columns[0].Width = listViewEditExport.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4;
+
         }
         private void buttonReturnToSelect_Click(object sender, EventArgs e)
         {

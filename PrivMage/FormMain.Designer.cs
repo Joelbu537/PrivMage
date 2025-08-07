@@ -1,6 +1,6 @@
 ﻿using PrivMage;
 
-namespace PrImage
+namespace PrivMage
 {
     partial class FormMain
     {
@@ -63,7 +63,7 @@ namespace PrImage
             textBoxEditNewCoverPath = new TextBox();
             buttonEditNewCover = new Button();
             listViewEditNewImages = new ListView();
-            columnHeaderImage = new ColumnHeader();
+            columnHeaderModifyNew = new ColumnHeader();
             buttonEditNewCreate = new Button();
             buttonEditNewRemoveImage = new Button();
             tableLayoutPanelEditNewLeftControll = new TableLayoutPanel();
@@ -82,10 +82,13 @@ namespace PrImage
             buttonEditModifyRemove = new Button();
             buttonEditModifyInsert = new Button();
             buttonEditModifySelect = new Button();
+            buttonEditModifyConfirm = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            buttonEditModifySwitchPlaces = new Button();
+            textBox1 = new TextBox();
             listViewEditModify = new ListView();
             columnHeaderModifyName = new ColumnHeader();
             imageList1 = new ImageList(components);
-            buttonEditModifyConfirm = new Button();
             tabControlMain.SuspendLayout();
             tabPageSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerSelect).BeginInit();
@@ -110,6 +113,7 @@ namespace PrImage
             tabPageModify.SuspendLayout();
             tableLayoutPanelEditModify.SuspendLayout();
             tableLayoutPanelEditModifyControll.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlMain
@@ -410,8 +414,8 @@ namespace PrImage
             // 
             pictureBoxView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxView.BackColor = Color.Transparent;
-            pictureBoxView.ErrorImage = PrivMage.Properties.Resources.fileError;
-            pictureBoxView.Image = PrivMage.Properties.Resources.image;
+            pictureBoxView.ErrorImage = Properties.Resources.fileError;
+            pictureBoxView.Image = Properties.Resources.image;
             pictureBoxView.InitialImage = null;
             pictureBoxView.Location = new Point(0, 0);
             pictureBoxView.Margin = new Padding(0);
@@ -538,7 +542,7 @@ namespace PrImage
             // listViewEditNewImages
             // 
             listViewEditNewImages.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listViewEditNewImages.Columns.AddRange(new ColumnHeader[] { columnHeaderImage });
+            listViewEditNewImages.Columns.AddRange(new ColumnHeader[] { columnHeaderModifyNew });
             listViewEditNewImages.FullRowSelect = true;
             listViewEditNewImages.GridLines = true;
             listViewEditNewImages.HeaderStyle = ColumnHeaderStyle.Nonclickable;
@@ -551,10 +555,10 @@ namespace PrImage
             listViewEditNewImages.View = View.Details;
             listViewEditNewImages.SelectedIndexChanged += listViewEditNewImages_SelectedIndexChanged;
             // 
-            // columnHeaderImage
+            // columnHeaderModifyNew
             // 
-            columnHeaderImage.Text = "Image";
-            columnHeaderImage.Width = 9999;
+            columnHeaderModifyNew.Text = "Image";
+            columnHeaderModifyNew.Width = 9999;
             // 
             // buttonEditNewCreate
             // 
@@ -687,10 +691,11 @@ namespace PrImage
             listViewEditExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listViewEditExport.Columns.AddRange(new ColumnHeader[] { columnHeaderName });
             listViewEditExport.FullRowSelect = true;
-            listViewEditExport.Location = new Point(3, 3);
+            listViewEditExport.Location = new Point(0, 0);
+            listViewEditExport.Margin = new Padding(0);
             listViewEditExport.MultiSelect = false;
             listViewEditExport.Name = "listViewEditExport";
-            listViewEditExport.Size = new Size(1750, 999);
+            listViewEditExport.Size = new Size(1756, 1005);
             listViewEditExport.Sorting = SortOrder.Ascending;
             listViewEditExport.TabIndex = 1;
             listViewEditExport.UseCompatibleStateImageBehavior = false;
@@ -735,11 +740,13 @@ namespace PrImage
             tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyRemove, 0, 1);
             tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyInsert, 0, 2);
             tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifySelect, 0, 3);
-            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyConfirm, 0, 5);
+            tableLayoutPanelEditModifyControll.Controls.Add(buttonEditModifyConfirm, 0, 6);
+            tableLayoutPanelEditModifyControll.Controls.Add(tableLayoutPanel1, 0, 4);
             tableLayoutPanelEditModifyControll.Dock = DockStyle.Fill;
             tableLayoutPanelEditModifyControll.Location = new Point(1365, 3);
             tableLayoutPanelEditModifyControll.Name = "tableLayoutPanelEditModifyControll";
-            tableLayoutPanelEditModifyControll.RowCount = 6;
+            tableLayoutPanelEditModifyControll.RowCount = 7;
+            tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
             tableLayoutPanelEditModifyControll.RowStyles.Add(new RowStyle());
@@ -812,28 +819,6 @@ namespace PrImage
             buttonEditModifySelect.UseVisualStyleBackColor = true;
             buttonEditModifySelect.Click += buttonEditModifySelect_Click;
             // 
-            // listViewEditModify
-            // 
-            listViewEditModify.Columns.AddRange(new ColumnHeader[] { columnHeaderModifyName });
-            listViewEditModify.Dock = DockStyle.Fill;
-            listViewEditModify.Location = new Point(3, 3);
-            listViewEditModify.Name = "listViewEditModify";
-            listViewEditModify.Size = new Size(1356, 1056);
-            listViewEditModify.TabIndex = 1;
-            listViewEditModify.UseCompatibleStateImageBehavior = false;
-            listViewEditModify.View = View.Details;
-            // 
-            // columnHeaderModifyName
-            // 
-            columnHeaderModifyName.Text = "Album";
-            columnHeaderModifyName.Width = 9999;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth8Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
-            // 
             // buttonEditModifyConfirm
             // 
             buttonEditModifyConfirm.AutoSize = true;
@@ -848,6 +833,68 @@ namespace PrImage
             buttonEditModifyConfirm.TabIndex = 4;
             buttonEditModifyConfirm.Text = "Confirm";
             buttonEditModifyConfirm.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(buttonEditModifySwitchPlaces, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(3, 243);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(388, 50);
+            tableLayoutPanel1.TabIndex = 5;
+            // 
+            // buttonEditModifySwitchPlaces
+            // 
+            buttonEditModifySwitchPlaces.AutoSize = true;
+            buttonEditModifySwitchPlaces.Font = new Font("Segoe UI", 12F);
+            buttonEditModifySwitchPlaces.Location = new Point(10, 6);
+            buttonEditModifySwitchPlaces.Margin = new Padding(10, 6, 10, 2);
+            buttonEditModifySwitchPlaces.Name = "buttonEditModifySwitchPlaces";
+            buttonEditModifySwitchPlaces.Padding = new Padding(5, 0, 5, 0);
+            buttonEditModifySwitchPlaces.Size = new Size(294, 42);
+            buttonEditModifySwitchPlaces.TabIndex = 4;
+            buttonEditModifySwitchPlaces.Text = "Switch Places with";
+            buttonEditModifySwitchPlaces.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Font = new Font("Segoe UI", 12F);
+            textBox1.Location = new Point(317, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(68, 39);
+            textBox1.TabIndex = 1;
+            // 
+            // listViewEditModify
+            // 
+            listViewEditModify.Columns.AddRange(new ColumnHeader[] { columnHeaderModifyName });
+            listViewEditModify.Dock = DockStyle.Fill;
+            listViewEditModify.FullRowSelect = true;
+            listViewEditModify.GridLines = true;
+            listViewEditModify.Location = new Point(3, 3);
+            listViewEditModify.Name = "listViewEditModify";
+            listViewEditModify.Size = new Size(1356, 1056);
+            listViewEditModify.Sorting = SortOrder.Ascending;
+            listViewEditModify.TabIndex = 1;
+            listViewEditModify.UseCompatibleStateImageBehavior = false;
+            listViewEditModify.View = View.Details;
+            // 
+            // columnHeaderModifyName
+            // 
+            columnHeaderModifyName.Text = "Album";
+            columnHeaderModifyName.Width = 9999;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
             // 
             // FormMain
             // 
@@ -894,6 +941,8 @@ namespace PrImage
             tableLayoutPanelEditModify.ResumeLayout(false);
             tableLayoutPanelEditModifyControll.ResumeLayout(false);
             tableLayoutPanelEditModifyControll.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
 
         }
@@ -924,7 +973,6 @@ namespace PrImage
         private System.Windows.Forms.Button buttonEditNewRemoveImage;
         private System.Windows.Forms.ListView listViewEditNewImages;
         private System.Windows.Forms.Button buttonEditNewCreate;
-        private System.Windows.Forms.ColumnHeader columnHeaderImage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEditExport;
         private System.Windows.Forms.Button buttonEditExport;
         private System.Windows.Forms.ListView listViewEditExport;
@@ -955,6 +1003,10 @@ namespace PrImage
         private Button buttonEditModifySelect;
         private ColumnHeader columnHeaderModifyName;
         private Button buttonEditModifyConfirm;
+        private ColumnHeader columnHeaderModifyNew;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button buttonEditModifySwitchPlaces;
+        private TextBox textBox1;
     }
 }
 
