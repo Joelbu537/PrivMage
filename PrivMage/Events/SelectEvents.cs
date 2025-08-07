@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PrImage.JsonBlueprints;
+using PrivMage.JsonBlueprints;
 using PrivMage.Properties;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PrivMage.Extensions;
 
 namespace PrivMage
 {
@@ -64,7 +65,7 @@ namespace PrivMage
             buttonSelectRead.Enabled = false;
             int id = LibraryContentsDictionary[listViewSelect.SelectedItems[0].ImageKey].Id;
             Debug.WriteLine($"Reading content with ID: {id}");
-            List<JsonBlueprints.Image> images = GetImageList(id);
+            List<JsonBlueprints.Image> images = GetImageList(id).SortImages();
 
             if(images == null || images.Count == 0)
             {
